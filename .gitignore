@@ -1,0 +1,16 @@
+
+# Bases de dados
+dados/
+resultados/*.csv
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Configurações locais
+.vscode/
+
+# Arquivos temporários
+*.tmp
