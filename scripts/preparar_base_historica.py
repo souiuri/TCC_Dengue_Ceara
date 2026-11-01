@@ -10,7 +10,7 @@ PASTA_PROCESSADOS = PASTA_PROJETO / "dados" / "processados"
 ARQUIVO = PASTA_ORIGINAIS / "DENGBR25.csv"
 
 # Códigos IBGE dos estados: Ceará = 23; Rio de Janeiro = 33
-ESTADOS = {"23", "33"}
+ESTADOS = {"23"}
 
 COLUNAS = [
     "NU_ANO",
@@ -23,7 +23,7 @@ COLUNAS = [
 
 def processar_arquivo(caminho):
     PASTA_PROCESSADOS.mkdir(parents=True, exist_ok=True)
-    saida = PASTA_PROCESSADOS / f"{caminho.stem}_CE_RJ.csv"
+    saida = PASTA_PROCESSADOS / f"{caminho.stem}_CE.csv"
 
     total_lido = 0
     total_filtrado = 0
@@ -56,8 +56,15 @@ def processar_arquivo(caminho):
 
     print(f"Arquivo lido: {caminho.name}")
     print(f"Registros lidos: {total_lido:,}")
-    print(f"Registros de CE e RJ: {total_filtrado:,}")
+    print(f"Registros do Ceará: {total_filtrado:,}")
     print(f"Arquivo gerado: {saida}")
 
 if __name__ == "__main__":
-    processar_arquivo(ARQUIVO)
+    for ano in range(2016, 2026):
+        nome_arquivo = f"DENGBR{str(ano)[-2:]}.csv"
+        caminho = PASTA_ORIGINAIS / nome_arquivo
+
+        if caminho.exists():
+            processar_arquivo(caminho)
+        else:
+            print(f"Arquivo não encontrado: {nome_arquivo}")
