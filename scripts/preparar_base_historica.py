@@ -19,6 +19,8 @@ COLUNAS = [
     "SG_UF",
     "ID_MN_RESI",
     "CLASSI_FIN",
+    "CRITERIO",
+    "ID_AGRAVO"
 ]
 
 def processar_arquivo(caminho):
