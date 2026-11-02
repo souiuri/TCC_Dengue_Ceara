@@ -73,6 +73,8 @@ Será avaliada a consistência das datas de notificação (`DT_NOTIFIC`) e de in
 
 A definição dos critérios de inclusão e exclusão será documentada antes da consolidação da base analítica.
 
+A classificação dos registros será investigada por meio da variável `CLASSI_FIN`, utilizando como referência o Dicionário de Dados do SINAN Online e a Nota Informativa nº 59/2016 do Ministério da Saúde. Serão considerados inicialmente como registros classificados como dengue aqueles identificados pelos códigos 10 (dengue), 11 (dengue com sinais de alarme) e 12 (dengue grave). A variável `CRITERIO` será utilizada para avaliar o critério de confirmação ou descarte, distinguindo registros laboratoriais, clínico-epidemiológicos e aqueles marcados como em investigação. A definição final da base analítica dependerá da investigação de classificações não documentadas, possíveis duplicidades e inconsistências temporais.
+
 ### 3.6 Análise temporal e espacial
 
 A análise contemplará a distribuição anual e mensal das notificações e dos casos confirmados, além de comparações entre municípios, considerando dados populacionais quando aplicável.
