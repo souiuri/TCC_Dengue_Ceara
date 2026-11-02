@@ -595,6 +595,24 @@ Os resultados ainda não constituem uma série epidemiológica anual definitiva.
 - Definir as regras finais de inclusão e exclusão dos registros.
 - Consolidar as séries temporais por data de início dos sintomas.
 
+### 13.8. Investigação exploratória de possíveis duplicidades — 2024
+
+Foi realizada uma análise exploratória de registros com combinações idênticas de variáveis no arquivo DENGBR24.csv, disponibilizado pelo Ministério da Saúde. Após a seleção dos registros do Ceará (`SG_UF = 23`), foram analisadas 12.552 notificações.
+
+Inicialmente, a comparação utilizou oito variáveis: agravo, data de notificação, ano da notificação, data dos primeiros sintomas, unidade federativa de residência, município de residência, classificação final e critério de confirmação. Nessa etapa, 5.248 registros apresentaram combinações repetidas.
+
+Posteriormente, foram acrescentadas quatro variáveis: idade codificada, sexo, unidade notificadora e município da notificação. Com 12 variáveis, o número de registros envolvidos em combinações repetidas diminuiu para 208.
+
+Na terceira comparação, foram incluídas cinco variáveis clínicas: febre, mialgia, cefaleia, exantema e hospitalização. Com 17 variáveis, foram identificados 95 registros envolvidos em 47 grupos de combinações repetidas, sendo 46 grupos com duas ocorrências e um grupo com três ocorrências.
+
+Todos os 95 registros estavam classificados como dengue (`CLASSI_FIN = 10`).
+
+Os resultados demonstram que a quantidade de coincidências depende das variáveis selecionadas. Entretanto, a igualdade entre os campos analisados não comprova que os registros correspondam à mesma pessoa ou ao mesmo episódio de doença.
+
+**Decisão metodológica:** preservar todos os registros nesta etapa, sem exclusão automática por coincidência de atributos. A investigação será posteriormente ampliada para os demais anos da série histórica, respeitando as diferenças de estrutura entre os arquivos.
+
+**Limitação:** a ausência de um identificador individual nas variáveis examinadas impede confirmar duplicidades apenas por comparação exata dos campos disponíveis.
+
 ## 14. Modelo para os próximos registros
 
 Utilizar a estrutura abaixo sempre que uma etapa metodológica relevante for concluída.
@@ -630,6 +648,7 @@ Utilizar a estrutura abaixo sempre que uma etapa metodológica relevante for con
 **Documentação do Matplotlib:** https://matplotlib.org/stable/
 
 As referências bibliográficas serão posteriormente revisadas e padronizadas conforme as exigências do artigo científico e do IFCE.
+
 
 ---
 
