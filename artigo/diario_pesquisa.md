@@ -329,7 +329,7 @@ A análise inicial identificou a seguinte quantidade de registros com `CLASSI_FI
 | DENGBR25 | 5.091 |
 | **Total** | **215.748** |
 
-**Observação de conferência:** a soma dos valores anuais é 215.748. Um total anterior de 215.471 havia sido registrado no diário, mas não corresponde à soma da tabela. O valor consolidado deverá ser confirmado novamente por execução do script antes de ser utilizado no artigo.
+**Observação de conferência:** O total de 215.748 registros foi confirmado por cálculo automatizado em Python, considerando os códigos 10, 11 e 12 da variável CLASSI_FIN.
 
 Essas quantidades ainda são preliminares e não representam necessariamente casos únicos ou a contagem definitiva de casos confirmados.
 
@@ -536,6 +536,64 @@ Antes da produção dos resultados definitivos, permanecem as seguintes pendênc
 **Decisão:** aprofundar a análise antes de estabelecer os critérios definitivos de confirmação.
 
 **Justificativa:** a presença desses registros exige cautela na interpretação dos totais.
+
+### 13.7. Análise histórica dos critérios de classificação — 2016 a 2025
+
+**Problema investigado:**
+
+Verificar a distribuição da variável `CRITERIO` entre os registros classificados como dengue nos dez arquivos históricos do Ceará, identificando possíveis inconsistências entre a classificação final e o critério informado.
+
+**Procedimento realizado:**
+
+Foi desenvolvido o script `scripts/verificar_criterios.py`, utilizando Python e a biblioteca pandas.
+
+Inicialmente, foram contabilizados os valores de `CRITERIO` em todos os registros filtrados para o Ceará.
+
+Posteriormente, a análise foi restringida aos registros com `CLASSI_FIN` igual a 10, 11 ou 12, correspondentes às classificações de dengue, dengue com sinais de alarme e dengue grave.
+
+Foram contabilizados os critérios:
+
+- `1`: laboratorial.
+- `2`: clínico-epidemiológico.
+- `3`: em investigação.
+
+Os resultados foram consolidados automaticamente e exportados para `resultados/criterios_dengue_2016_2025.csv`.
+
+**Resultados obtidos:**
+
+| Critério | Registros | Percentual |
+|---|---:|---:|
+| Laboratorial (1) | 73.588 | 34,1% |
+| Clínico-epidemiológico (2) | 136.399 | 63,2% |
+| Em investigação (3) | 5.761 | 2,7% |
+| **Total** | **215.748** | **100%** |
+
+A soma dos registros foi verificada automaticamente pelo Python.
+
+O critério clínico-epidemiológico apresentou a maior frequência entre os registros classificados como dengue.
+
+Foram identificados 5.761 registros que apresentam classificação final de dengue, mas possuem `CRITERIO = 3`, correspondente a registros em investigação no dicionário consultado.
+
+A análise inicial de todos os registros, antes do filtro por classificação final, também identificou quatro ocorrências de `CRITERIO = 0`, sendo três no arquivo de 2023 e uma no arquivo de 2025.
+
+**Decisão metodológica:**
+
+Manter provisoriamente todos os registros classificados com os códigos 10, 11 e 12, sem excluir automaticamente aqueles com `CRITERIO = 3`.
+
+A definição final dos casos confirmados dependerá de investigação adicional da consistência entre `CLASSI_FIN` e `CRITERIO`, além da avaliação de duplicidades e da qualidade das datas.
+
+**Limitações:**
+
+As quantidades apresentadas representam registros nos arquivos históricos, e não necessariamente casos únicos ou ocorrências pertencentes ao ano indicado no nome de cada arquivo.
+
+Os resultados ainda não constituem uma série epidemiológica anual definitiva.
+
+**Pendências:**
+
+- Investigar os 5.761 registros com `CRITERIO = 3`.
+- Verificar possíveis duplicidades entre os arquivos históricos.
+- Definir as regras finais de inclusão e exclusão dos registros.
+- Consolidar as séries temporais por data de início dos sintomas.
 
 ## 14. Modelo para os próximos registros
 
