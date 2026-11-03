@@ -613,6 +613,24 @@ Os resultados demonstram que a quantidade de coincidências depende das variáve
 
 **Limitação:** a ausência de um identificador individual nas variáveis examinadas impede confirmar duplicidades apenas por comparação exata dos campos disponíveis.
 
+### 13.9. Investigação histórica de possíveis duplicidades (2016–2025)
+
+Foi realizada uma investigação exploratória de possíveis duplicidades nos arquivos de notificações de dengue do SINAN referentes ao Ceará, abrangendo o período de 2016 a 2025.
+
+Foram analisados 416.095 registros, distribuídos entre dez arquivos históricos.
+
+Inicialmente, compararam-se oito variáveis comuns aos arquivos, sendo identificados 234.482 registros envolvidos em combinações repetidas dentro dos respectivos arquivos.
+
+Posteriormente, foram acrescentadas quatro variáveis: idade codificada, sexo, unidade notificadora e município da notificação. Com 12 variáveis, a quantidade de registros envolvidos em combinações repetidas diminuiu para 7.570, correspondendo a aproximadamente 1,82% do total analisado.
+
+Também foi realizada uma comparação entre arquivos históricos diferentes, utilizando as 12 variáveis. Não foram identificadas combinações integralmente idênticas presentes em mais de um arquivo.
+
+Esses resultados indicam que a quantidade de coincidências depende significativamente das variáveis utilizadas na comparação. Entretanto, a igualdade entre atributos não comprova que duas notificações correspondam à mesma pessoa ou ao mesmo episódio da doença.
+
+**Decisão metodológica:** não realizar exclusão automática de registros nesta etapa, preservando a integridade dos dados originais.
+
+**Limitação:** a ausência de um identificador individual entre os campos examinados impede confirmar duplicidades apenas com os procedimentos realizados. A investigação não descarta registros duplicados com diferenças de preenchimento.
+
 ## 14. Modelo para os próximos registros
 
 Utilizar a estrutura abaixo sempre que uma etapa metodológica relevante for concluída.
