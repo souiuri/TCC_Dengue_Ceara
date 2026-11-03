@@ -85,9 +85,17 @@ Na etapa final, serão aplicadas técnicas de análise de séries temporais para
 
 ## 4. Resultados e discussão
 
-*A desenvolver após a validação e consolidação das bases.*
+### 4.1. Resultados preliminares — Análise temporal
 
-Os resultados preliminares do processamento e da qualidade dos dados estão registrados no arquivo `diario_pesquisa.md`.
+A análise temporal compreendeu 215.251 registros classificados como dengue no Ceará, com início dos sintomas entre 2016 e 2025, após a aplicação dos critérios de seleção temporal e desconsideração dos registros com atrasos de notificação superiores a 365 dias.
+
+A distribuição anual apresentou variações expressivas ao longo do período estudado. O maior total foi observado em 2016, com 41.894 registros, seguido por 2022, com 39.940. Em contrapartida, 2018 apresentou 3.995 registros, o menor total entre 2016 e 2024.
+
+A análise da sazonalidade revelou maior concentração dos registros entre março e junho, correspondendo a aproximadamente 65,5% do total analisado. Maio apresentou a maior média mensal, com 4.401,8 registros.
+
+A avaliação dos picos anuais demonstrou que o mês de maior ocorrência se concentrou entre abril e junho em todos os anos estudados. O maior pico mensal da série foi identificado em maio de 2022, com 10.601 registros.
+
+Esses resultados indicam um padrão sazonal nos registros analisados, embora sejam necessárias avaliações adicionais sobre a completude e a representatividade dos dados para sustentar interpretações epidemiológicas mais amplas.
 
 ## 5. Conclusão
 

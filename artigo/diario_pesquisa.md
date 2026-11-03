@@ -666,7 +666,98 @@ Utilizar a estrutura abaixo sempre que uma etapa metodológica relevante for con
 **Documentação do Matplotlib:** https://matplotlib.org/stable/
 
 As referências bibliográficas serão posteriormente revisadas e padronizadas conforme as exigências do artigo científico e do IFCE.
+## 16. Análise temporal da dengue no Ceará (2016–2025)
 
+### 16.1. Preparação e validação da base analítica
+
+A base histórica consolidada contém 416.095 registros referentes ao Ceará, provenientes dos arquivos públicos de dengue do Ministério da Saúde, entre 2016 e 2025.
+
+Foram identificados 215.748 registros classificados como dengue, considerando os códigos 10 (dengue), 11 (dengue com sinais de alarme) e 12 (dengue grave) da variável `CLASSI_FIN`.
+
+A análise temporal utilizou a variável `DT_SIN_PRI`, correspondente à data de início dos primeiros sintomas.
+
+Foram identificados 435 registros com início dos sintomas fora do intervalo de 2016 a 2025. Esses registros foram mantidos na base histórica, mas não incluídos na base analítica do período estudado.
+
+A base analítica resultante contém 215.313 registros.
+
+### 16.2. Critérios de qualidade temporal
+
+Foi calculado o intervalo, em dias, entre o início dos sintomas (`DT_SIN_PRI`) e a data de notificação (`DT_NOTIFIC`).
+
+Entre os 215.313 registros da base analítica, foram identificados:
+
+- 211.881 registros com intervalo entre 0 e 30 dias;
+- 3.370 registros com intervalo entre 31 e 365 dias;
+- 62 registros com intervalo superior a 365 dias;
+- Nenhum intervalo negativo ou ausente.
+
+Os 62 registros com intervalo superior a 365 dias foram classificados como atrasos extremos e identificados pela variável `ATRASO_EXTREMO`.
+
+Por decisão metodológica, esses registros permaneceram preservados na base analítica, mas foram desconsiderados nos scripts de análise temporal.
+
+Assim, a série histórica temporal foi construída com 215.251 registros.
+
+Essa decisão não representa comprovação de erro nos registros. Trata-se de um critério operacional de qualidade temporal, sujeito a avaliação de sensibilidade posterior.
+
+### 16.3. Construção da série histórica
+
+Foi criada uma série histórica mensal com 120 observações, correspondentes aos meses de janeiro de 2016 a dezembro de 2025.
+
+A distribuição anual dos registros utilizados foi:
+
+| Ano | Registros |
+|---|---:|
+| 2016 | 41.894 |
+| 2017 | 27.055 |
+| 2018 | 3.995 |
+| 2019 | 15.674 |
+| 2020 | 21.451 |
+| 2021 | 33.845 |
+| 2022 | 39.940 |
+| 2023 | 14.220 |
+| 2024 | 12.128 |
+| 2025 | 5.049 |
+| **Total** | **215.251** |
+
+### 16.4. Análise de sazonalidade
+
+A análise da distribuição mensal indicou concentração dos registros entre março e junho, período responsável por aproximadamente 65,5% dos registros utilizados.
+
+Maio apresentou a maior média mensal da série, com 4.401,8 registros, seguido por abril, com 3.933,0, e junho, com 3.362,9.
+
+O menor valor médio ocorreu em dezembro, com 325,2 registros.
+
+A investigação dos picos anuais identificou que:
+
+- Maio foi o mês de maior registro em cinco anos;
+- Abril foi o mês de maior registro em quatro anos;
+- Junho foi o mês de maior registro em um ano.
+
+Portanto, em todos os dez anos analisados, os maiores valores mensais ocorreram entre abril e junho.
+
+O maior pico mensal da série foi registrado em maio de 2022, com 10.601 registros.
+
+### 16.5. Visualizações produzidas
+
+Foram produzidos:
+
+1. Série histórica mensal de registros classificados como dengue, de 2016 a 2025.
+2. Gráfico de linha da evolução mensal.
+3. Mapa de calor da distribuição mensal por ano.
+
+Arquivos principais:
+
+- `resultados/serie_historica_mensal.csv`
+- `resultados/graficos/serie_mensal_2016_2025.png`
+- `resultados/graficos/mapa_calor_2016_2025.png`
+
+### 16.6. Limitações e próximos procedimentos
+
+Os resultados representam registros classificados como dengue presentes nos arquivos analisados, não necessariamente casos únicos ou incidência populacional.
+
+Ainda será necessário avaliar a completude dos dados, especialmente de 2025, investigar possíveis efeitos de diferenças na cobertura dos arquivos e realizar uma análise de sensibilidade considerando os 62 registros sinalizados.
+
+A próxima etapa será a análise espacial por município de residência, utilizando a variável `ID_MN_RESI`.
 
 ---
 
