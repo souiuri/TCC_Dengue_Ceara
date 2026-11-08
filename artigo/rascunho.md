@@ -97,6 +97,18 @@ A avaliação dos picos anuais demonstrou que o mês de maior ocorrência se con
 
 Esses resultados indicam um padrão sazonal nos registros analisados, embora sejam necessárias avaliações adicionais sobre a completude e a representatividade dos dados para sustentar interpretações epidemiológicas mais amplas.
 
+### 4.2. Resultados preliminares — Análise espacial
+
+A validação dos códigos municipais identificou registros referentes aos 184 municípios do Ceará, totalizando 215.243 registros com município cearense válido entre 2016 e 2025. A distribuição dos valores absolutos apresentou concentração expressiva em Fortaleza, responsável por 41,83% dos registros municipais, seguida por Brejo Santo (3,37%) e Caucaia (2,86%).
+
+A Figura 3 apresenta os dez municípios com maiores quantidades acumuladas de registros classificados como dengue no período analisado.
+
+![Figura 3 — Municípios com mais registros de dengue no Ceará](../resultados/graficos/top10_municipios_2016_2025.png)
+
+*Figura 3 — Dez municípios com maiores quantidades de registros classificados como dengue no Ceará, entre 2016 e 2025. Fonte: elaboração própria, com dados do Ministério da Saúde.*
+
+Esses resultados constituem uma caracterização espacial preliminar. A incorporação de dados populacionais será necessária para comparar adequadamente as taxas entre municípios.
+
 ## 5. Conclusão
 
 *A elaborar após a análise e discussão dos resultados.*

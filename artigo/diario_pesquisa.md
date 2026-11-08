@@ -759,6 +759,36 @@ Ainda será necessário avaliar a completude dos dados, especialmente de 2025, i
 
 A próxima etapa será a análise espacial por município de residência, utilizando a variável `ID_MN_RESI`.
 
+## 17. Análise espacial da dengue no Ceará (2016–2025)
+
+### 17.1. Validação dos códigos municipais
+
+Foi realizada a validação da variável `ID_MN_RESI`, referente ao município de residência, utilizando a API de localidades do IBGE.
+
+Dos 215.251 registros analisados, 215.243 apresentaram códigos municipais válidos do Ceará, seis não possuíam código municipal e dois apresentaram códigos de outros estados.
+
+Foram identificados e validados os 184 municípios cearenses, sem códigos inválidos ou municípios ausentes.
+
+### 17.2. Consolidação dos registros por município
+
+Foi desenvolvido o script `scripts/consolidar_dados_municipios.py`, responsável por associar os códigos municipais aos nomes oficiais do IBGE e calcular os totais acumulados de registros.
+
+O processamento gerou o arquivo `resultados/municipios_dengue_2016_2025.csv`, contendo os 184 municípios, seus códigos e a quantidade e participação percentual dos registros.
+
+Os oito registros sem município cearense válido foram preservados na base analítica, mas não incluídos na agregação municipal.
+
+### 17.3. Resultados preliminares
+
+Fortaleza apresentou a maior quantidade de registros (90.035; 41,83%), seguida por Brejo Santo (7.249; 3,37%) e Caucaia (6.155; 2,86%).
+
+Foi produzido o gráfico `resultados/graficos/top10_municipios_2016_2025.png`, apresentando os dez municípios com maiores totais acumulados.
+
+### 17.4. Limitações e próximos procedimentos
+
+Os totais absolutos não permitem comparar diretamente o risco de dengue entre municípios com populações diferentes.
+
+A próxima etapa será obter dados populacionais oficiais para calcular taxas anuais por 100 mil habitantes e aprofundar a análise espacial.
+
 ---
 
 *Documento interno de acompanhamento da pesquisa. Os resultados apresentados são preliminares e estão sujeitos a verificações, revisões metodológicas e validação científica antes de sua utilização no artigo final.*
