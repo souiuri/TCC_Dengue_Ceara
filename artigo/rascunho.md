@@ -79,6 +79,34 @@ A classificação dos registros será investigada por meio da variável `CLASSI_
 
 A análise contemplará a distribuição anual e mensal das notificações e dos casos confirmados, além de comparações entre municípios, considerando dados populacionais quando aplicável.
 
+### 3.6.1 Dados populacionais e padronização das taxas
+
+Para permitir a comparação da distribuição dos registros de dengue entre municípios de diferentes tamanhos populacionais, foi construída uma base histórica de população municipal do Ceará, abrangendo o período de 2016 a 2025.
+
+Os dados foram obtidos de publicações oficiais do Instituto Brasileiro de Geografia e Estatística (IBGE). Para os anos de 2016 a 2021 e de 2024 a 2025, foram utilizadas estimativas populacionais municipais. Para 2022, foram utilizados os dados de população residente do Censo Demográfico 2022, disponibilizados na tabela 4714 do SIDRA/IBGE. Para 2023, foi utilizada a publicação censitária referente à malha municipal daquele ano.
+
+O processamento foi realizado em Python, com auxílio da biblioteca pandas, por meio do script `preparar_populacao_historica.py`. Os arquivos foram padronizados utilizando os códigos municipais de sete dígitos do IBGE e consolidados em uma base contendo 1.840 observações, correspondentes aos 184 municípios cearenses durante dez anos.
+
+Foram realizadas verificações de integridade, incluindo unicidade dos códigos municipais por ano, ausência de populações inválidas e consistência dos totais estaduais.
+
+Na comparação das bases de 2022 e 2023, identificaram-se diferenças populacionais nos municípios de Ereré e Pereiro, com variações de -227 e +227 habitantes, respectivamente. O total estadual permaneceu inalterado. Os valores originais foram preservados, considerando-se a necessidade de investigar eventuais diferenças de referência territorial.
+
+Após a integração da base populacional aos registros classificados de dengue, será calculada a taxa anual de registros por 100 mil habitantes:
+
+\[
+T_{m,a}=\frac{R_{m,a}}{P_{m,a}}\times100.000
+\]
+
+Em que:
+
+- \(T_{m,a}\): taxa de registros classificados de dengue por 100 mil habitantes no município \(m\), no ano \(a\).
+- \(R_{m,a}\): quantidade de registros classificados de dengue no município \(m\), no ano \(a\).
+- \(P_{m,a}\): população utilizada como denominador para o município \(m\), no ano \(a\).
+
+As taxas calculadas serão interpretadas como indicadores derivados da base analítica do estudo, não sendo automaticamente equivalentes aos indicadores oficiais de incidência de dengue.
+
+A utilização de dados censitários e estimativas populacionais de diferentes referências temporais e territoriais constitui uma limitação metodológica a ser considerada na comparação entre anos.
+
 ### 3.7 Análise de tendências
 
 Na etapa final, serão aplicadas técnicas de análise de séries temporais para investigar tendências e padrões sazonais. Os métodos estatísticos específicos serão definidos após a consolidação e avaliação da qualidade da série histórica.

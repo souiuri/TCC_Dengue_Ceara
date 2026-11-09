@@ -34,6 +34,58 @@ Os dados foram obtidos no portal de dados abertos do Ministério da Saúde, a pa
 
 Os arquivos originais seguem o padrão `DENGBR16.csv` até `DENGBR25.csv`.
 
+## Base populacional histórica do Ceará (2016–2025)
+
+Para permitir a comparação dos registros de dengue entre municípios com diferentes tamanhos populacionais, foi construída uma base histórica de população dos 184 municípios do Ceará, abrangendo o período de 2016 a 2025.
+
+### Fontes dos dados
+
+Os dados populacionais foram obtidos de publicações oficiais do Instituto Brasileiro de Geografia e Estatística (IBGE):
+
+- **2016–2021:** estimativas anuais de população municipal.
+- **2022:** população residente do Censo Demográfico 2022, obtida na tabela 4714 do SIDRA/IBGE.
+- **2023:** população do Censo 2022 disponibilizada com referência à malha municipal de 2023.
+- **2024–2025:** estimativas anuais de população municipal.
+
+### Processamento
+
+O processamento é realizado pelo script `scripts/preparar_populacao_historica.py`, responsável por:
+
+1. Ler os arquivos populacionais originais do IBGE.
+2. Selecionar os municípios do Ceará, identificados pelo código da unidade federativa 23.
+3. Padronizar os códigos municipais do IBGE com sete dígitos.
+4. Consolidar os dados em uma única estrutura histórica.
+5. Validar a quantidade de municípios, a unicidade dos códigos, a integridade das populações e os totais estaduais.
+
+O arquivo gerado é:
+
+`dados/processados/populacao_ceara_historica.csv`
+
+**Estrutura:** 1.840 registros, correspondentes a 184 municípios em 10 anos.
+
+**Campos:** `CODIGO_IBGE`, `ANO`, `MUNICIPIO` e `POPULACAO`.
+
+### Particularidade dos dados de 2022 e 2023
+
+As bases de 2022 e 2023 apresentam a mesma população estadual, de 8.794.957 habitantes, mas foram identificadas diferenças em dois municípios:
+
+| Município | População 2022 | População 2023 | Diferença |
+|---|---:|---:|---:|
+| Ereré | 6.474 | 6.247 | -227 |
+| Pereiro | 15.274 | 15.501 | +227 |
+
+As diferenças se compensam no total estadual. Os valores originais foram preservados, sem ajustes manuais.
+
+A hipótese de redistribuição populacional associada à referência territorial de 2023 ainda depende de confirmação documental do IBGE.
+
+**Nota metodológica:** os dados de 2023 não representam uma estimativa populacional independente do Censo 2022. Essa particularidade deverá ser considerada na interpretação das taxas anuais.
+
+### Aplicação na pesquisa
+
+A base populacional será utilizada como denominador no cálculo das taxas anuais de registros classificados de dengue por 100 mil habitantes, permitindo comparações temporais e espaciais entre os municípios cearenses.
+
+Essas taxas serão indicadores derivados da base analítica utilizada no estudo e não devem ser apresentadas automaticamente como incidência oficial de dengue.
+
 ## 🛠️ Tecnologias utilizadas
 
 - 🐍 Python — processamento e análise dos dados.

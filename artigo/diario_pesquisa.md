@@ -789,6 +789,66 @@ Os totais absolutos não permitem comparar diretamente o risco de dengue entre m
 
 A próxima etapa será obter dados populacionais oficiais para calcular taxas anuais por 100 mil habitantes e aprofundar a análise espacial.
 
+## 18. Consolidação da base populacional histórica — 2016 a 2025
+
+**Etapa:** concluída e validada.
+
+### 18.1. Objetivo
+
+Construir uma base populacional municipal histórica para permitir o cálculo de taxas de registros classificados de dengue por 100 mil habitantes, considerando os diferentes tamanhos populacionais dos municípios cearenses.
+
+### 18.2. Fontes e processamento
+
+Foram utilizados dados oficiais do IBGE:
+
+- 2016 a 2021: estimativas populacionais municipais.
+- 2022: Censo Demográfico 2022, tabela 4714 do SIDRA.
+- 2023: população censitária de 2022 com referência à malha municipal de 2023.
+- 2024 e 2025: estimativas populacionais municipais.
+
+O script `scripts/preparar_populacao_historica.py` foi utilizado para leitura, padronização, validação e consolidação dos arquivos.
+
+A base final foi salva em `dados/processados/populacao_ceara_historica.csv`.
+
+### 18.3. Resultados da validação
+
+- Período: 2016–2025.
+- Anos processados: 10.
+- Municípios por ano: 184.
+- Total de registros: 1.840.
+- Códigos IBGE municipais únicos por ano: 184.
+- Valores populacionais ausentes: nenhum nas verificações realizadas.
+- Totais populacionais estaduais: validados.
+
+### 18.4. Investigação das diferenças entre 2022 e 2023
+
+Foi realizada uma comparação das populações municipais dos dois arquivos.
+
+Ambos apresentam população estadual de 8.794.957 habitantes, mas dois municípios possuem diferenças:
+
+| Município | 2022 | 2023 | Diferença |
+|---|---:|---:|---:|
+| Ereré | 6.474 | 6.247 | -227 |
+| Pereiro | 15.274 | 15.501 | +227 |
+
+Os outros 182 municípios apresentam valores idênticos.
+
+A hipótese de redistribuição territorial permanece pendente de confirmação na documentação do IBGE.
+
+**Decisão metodológica:** preservar os valores publicados nas respectivas fontes, sem correções manuais, e documentar a diferença na interpretação dos indicadores.
+
+### 18.5. Dificuldades encontradas
+
+- Necessidade de instalar a biblioteca `openpyxl` para leitura da tabela 4714 em formato XLSX.
+- Diferenças na estrutura dos arquivos populacionais entre os anos.
+- Necessidade de tratamento específico para os dados censitários de 2022 e a publicação de 2023.
+- Avisos de descontinuação futura do mecanismo `xlrd` na versão utilizada do pandas, sem comprometimento da execução atual.
+
+### 18.6. Próxima etapa
+
+Relacionar `populacao_ceara_historica.csv` com `municipios_dengue_por_ano.csv` utilizando o código IBGE e o ano.
+
+Validar a correspondência dos 1.840 pares município-ano e calcular as taxas anuais de registros classificados de dengue por 100 mil habitantes.
 ---
 
 *Documento interno de acompanhamento da pesquisa. Os resultados apresentados são preliminares e estão sujeitos a verificações, revisões metodológicas e validação científica antes de sua utilização no artigo final.*
