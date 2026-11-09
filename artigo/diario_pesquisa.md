@@ -4,6 +4,8 @@
 
 **Curso:** Ciência da Computação — Instituto Federal de Educação, Ciência e Tecnologia do Ceará (IFCE), Campus Maracanaú
 
+**Orientador:** Prof. Fabio Jose Gomes de Sousa
+
 **Situação:** Pesquisa em desenvolvimento
 
 **Natureza do documento:** Registro interno de acompanhamento científico e metodológico

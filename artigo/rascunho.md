@@ -6,6 +6,9 @@
 
 **Situação:** Rascunho inicial do artigo científico
 
+**Orientador:** Prof. Fabio Jose Gomes de Sousa
+
+
 ## Resumo
 
 *A elaborar após a conclusão das análises e da discussão dos resultados.*
