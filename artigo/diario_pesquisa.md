@@ -10,6 +10,8 @@
 
 **Natureza do documento:** Registro interno de acompanhamento científico e metodológico
 
+**Nota editorial:** este diário preserva registros históricos de etapas preliminares. As seções posteriores atualizam resultados e decisões anteriores; para o estado atual das pendências, consultar a seção 11.
+
 ---
 
 ## 1. Objetivo da pesquisa
@@ -19,9 +21,13 @@ Investigar a distribuição temporal e espacial dos registros de dengue no estad
 A pesquisa pretende analisar separadamente:
 
 - O conjunto de registros de dengue disponíveis nas bases históricas.
+
 - Os registros classificados como casos de dengue, após validação dos critérios de classificação.
+
 - A evolução anual e mensal dos registros.
+
 - A distribuição espacial da dengue entre os municípios cearenses.
+
 - As tendências temporais e os padrões de sazonalidade da doença.
 
 Ao final, pretende-se aplicar técnicas de análise de séries temporais para investigar tendências, variações interanuais e possíveis padrões sazonais.
@@ -37,14 +43,23 @@ Os dados utilizados foram obtidos no Portal de Dados Abertos do Ministério da S
 Foram selecionados dez arquivos históricos:
 
 - `DENGBR16.csv`
+
 - `DENGBR17.csv`
+
 - `DENGBR18.csv`
+
 - `DENGBR19.csv`
+
 - `DENGBR20.csv`
+
 - `DENGBR21.csv`
+
 - `DENGBR22.csv`
+
 - `DENGBR23.csv`
+
 - `DENGBR24.csv`
+
 - `DENGBR25.csv`
 
 Esses arquivos constituem a fonte primária da pesquisa.
@@ -60,10 +75,15 @@ O processamento e a análise dos dados estão sendo desenvolvidos em ambiente Wi
 ### 3.1. Ferramentas
 
 - Python — linguagem de programação.
+
 - pandas — leitura, filtragem e manipulação dos dados.
+
 - Matplotlib — geração de gráficos.
+
 - Visual Studio Code — edição e execução dos scripts.
+
 - Git — controle de versões.
+
 - GitHub — armazenamento e acompanhamento do código-fonte.
 
 ### 3.2. Estratégia de processamento
@@ -81,18 +101,31 @@ O projeto utiliza scripts independentes para preparação, exploração e valida
 A estrutura principal do projeto é composta por:
 
 ```text
+
 TCC_Dengue_Ceara/
+
 ├── artigo/
-│   ├── diario_pesquisa.md
-│   └── rascunho.md
+
+│   ├── diario_pesquisa.md
+
+│   └── rascunho.md
+
 ├── dados/
-│   ├── originais/
-│   └── processados/
+
+│   ├── originais/
+
+│   └── processados/
+
 ├── resultados/
-│   └── graficos/
+
+│   └── graficos/
+
 ├── scripts/
+
 ├── .gitignore
+
 └── README.md
+
 ```
 
 ### 4.1. Finalidade dos diretórios
@@ -119,11 +152,12 @@ O filtro utiliza a variável `SG_UF`, selecionando os registros com código:
 
 `SG_UF = 23`
 
-Esse código corresponde ao estado do Ceará.
+Esse código corresponde ao estado do Ceará. A seleção por `SG_UF` não garante, por si só, que `ID_MN_RESI` identifique um dos 184 municípios cearenses. Por isso, a análise espacial realiza uma validação independente dos códigos de município de residência.
 
 Os arquivos resultantes são armazenados em `dados/processados/`, com nomes como:
 
 - `DENGBR16_CE.csv`
+
 - `DENGBR25_CE.csv`
 
 ### 5.2. Variáveis preservadas
@@ -131,14 +165,23 @@ Os arquivos resultantes são armazenados em `dados/processados/`, com nomes como
 Após a atualização do processamento, foram selecionadas oito variáveis:
 
 | Variável | Finalidade na pesquisa |
+
 |---|---|
+
 | `ID_AGRAVO` | Identificação do agravo registrado |
+
 | `DT_NOTIFIC` | Data da notificação |
+
 | `NU_ANO` | Ano registrado na base |
+
 | `DT_SIN_PRI` | Data de início dos primeiros sintomas |
+
 | `SG_UF` | Unidade federativa |
+
 | `ID_MN_RESI` | Município de residência |
+
 | `CLASSI_FIN` | Classificação final do registro |
+
 | `CRITERIO` | Critério de confirmação ou descarte |
 
 A ordem das colunas não interfere nas análises, desde que seus nomes sejam preservados corretamente.
@@ -146,17 +189,29 @@ A ordem das colunas não interfere nas análises, desde que seus nomes sejam pre
 ### 5.3. Resultados do processamento
 
 | Arquivo original | Registros filtrados para o Ceará |
+
 |---|---:|
+
 | DENGBR16.csv | 100.523 |
+
 | DENGBR17.csv | 81.382 |
+
 | DENGBR18.csv | 15.202 |
+
 | DENGBR19.csv | 33.396 |
+
 | DENGBR20.csv | 40.976 |
+
 | DENGBR21.csv | 69.284 |
+
 | DENGBR22.csv | 42.787 |
+
 | DENGBR23.csv | 14.463 |
+
 | DENGBR24.csv | 12.552 |
+
 | DENGBR25.csv | 5.530 |
+
 | **Total** | **416.095** |
 
 **Observação metodológica:** os 416.095 registros representam a soma das linhas filtradas nos dez arquivos de origem.
@@ -174,10 +229,15 @@ Inicialmente, ocorreu um erro de execução relacionado à utilização de uma v
 Em seguida:
 
 1. Foi verificada a presença das oito variáveis nos dez arquivos originais.
+
 2. Todos os arquivos originais passaram na verificação.
+
 3. O processamento histórico foi executado novamente.
+
 4. Os dez arquivos processados foram gerados sem erros.
+
 5. As quantidades de registros permaneceram iguais às do processamento anterior.
+
 6. Foi confirmada a presença das oito colunas no arquivo processado de 2025.
 
 **Situação da etapa:** processamento concluído e atualização registrada no Git.
@@ -229,20 +289,31 @@ O intervalo é calculado pela expressão:
 Os registros foram distribuídos nas seguintes categorias:
 
 - Notificação anterior ao início dos sintomas.
+
 - Intervalo entre 0 e 30 dias.
+
 - Intervalo entre 31 e 365 dias.
+
 - Intervalo superior a 365 dias.
+
 - Datas ausentes ou inválidas.
 
 ### 7.2. Resultados
 
 | Indicador | Registros |
+
 |---|---:|
+
 | Intervalo de 0 a 30 dias | 407.102 |
+
 | Intervalo de 31 a 365 dias | 8.048 |
+
 | Intervalo superior a 365 dias | 938 |
+
 | Notificação anterior aos sintomas | 2 |
+
 | Datas ausentes ou inválidas | 5 |
+
 | **Total** | **416.095** |
 
 Aproximadamente **97,84%** dos registros apresentaram intervalo entre zero e trinta dias.
@@ -256,8 +327,11 @@ Essa observação descreve apenas a distribuição dos intervalos calculados e n
 Foram encontrados dois registros no arquivo de 2022 em que a data de notificação era anterior à data de início dos sintomas.
 
 | Data de notificação | Data de início dos sintomas |
+
 |---|---|
+
 | 19/04/2022 | 22/04/2022 |
+
 | 02/02/2022 | 01/08/2022 |
 
 Também foram identificados registros com intervalos superiores a 365 dias, incluindo datas de sintomas muito anteriores ao período esperado.
@@ -295,6 +369,7 @@ Essa etapa é necessária para distinguir notificações, registros descartados 
 Foram examinados os seguintes documentos do Ministério da Saúde:
 
 - **Dicionário de Dados do SINAN Online**, versão 3.0, revisado em 2015.
+
 - **Nota Informativa nº 59/2016 — CGPNCD/DEVIT/SVS/MS**.
 
 Esses documentos foram utilizados para interpretar os códigos de classificação e os critérios associados aos registros.
@@ -302,11 +377,17 @@ Esses documentos foram utilizados para interpretar os códigos de classificaçã
 ### 8.2. Códigos documentados de `CLASSI_FIN`
 
 | Código | Classificação |
+
 |---|---|
+
 | 5 | Descartado |
+
 | 10 | Dengue |
+
 | 11 | Dengue com sinais de alarme |
+
 | 12 | Dengue grave |
+
 | 13 | Chikungunya |
 
 Também foram encontrados os códigos `8`, `0`, `1` e `4` nas bases históricas.
@@ -318,17 +399,29 @@ Esses códigos não foram esclarecidos pelos documentos consultados até o momen
 A análise inicial identificou a seguinte quantidade de registros com `CLASSI_FIN` igual a 10, 11 ou 12:
 
 | Arquivo | Registros classificados como dengue |
+
 |---|---:|
+
 | DENGBR16 | 42.007 |
+
 | DENGBR17 | 27.262 |
+
 | DENGBR18 | 4.019 |
+
 | DENGBR19 | 15.698 |
+
 | DENGBR20 | 21.543 |
+
 | DENGBR21 | 33.845 |
+
 | DENGBR22 | 39.940 |
+
 | DENGBR23 | 14.210 |
+
 | DENGBR24 | 12.133 |
+
 | DENGBR25 | 5.091 |
+
 | **Total** | **215.748** |
 
 **Observação de conferência:** O total de 215.748 registros foi confirmado por cálculo automatizado em Python, considerando os códigos 10, 11 e 12 da variável CLASSI_FIN.
@@ -352,9 +445,13 @@ A variável `CRITERIO` foi incorporada ao processamento para permitir a análise
 ### 9.1. Códigos documentados
 
 | Código | Critério |
+
 |---|---|
+
 | 1 | Laboratorial |
+
 | 2 | Clínico-epidemiológico |
+
 | 3 | Em investigação |
 
 ### 9.2. Investigação preliminar do arquivo de 2025
@@ -364,10 +461,15 @@ Foi realizada uma análise cruzada entre `CLASSI_FIN` e `CRITERIO` nos registros
 Entre os 5.091 registros com classificação 10, 11 ou 12, foram observados:
 
 | Critério | Registros |
+
 |---|---:|
+
 | Laboratorial (1) | 4.007 |
+
 | Clínico-epidemiológico (2) | 907 |
+
 | Em investigação (3) | 177 |
+
 | **Total** | **5.091** |
 
 A presença de 177 registros classificados como dengue, mas com critério marcado como em investigação, exige uma verificação adicional da consistência e da interpretação desses campos.
@@ -395,9 +497,13 @@ Os códigos 10, 11 e 12 serão utilizados inicialmente para identificar registro
 Entretanto, a definição final de casos confirmados dependerá de:
 
 - Investigação dos critérios de classificação.
+
 - Verificação dos registros em investigação.
+
 - Esclarecimento dos códigos não documentados.
+
 - Avaliação de possíveis duplicidades.
+
 - Aplicação das regras de consistência temporal.
 
 Não serão apresentados resultados definitivos de casos confirmados antes da conclusão dessas verificações.
@@ -427,41 +533,49 @@ Essas contagens representam números absolutos e não taxas de incidência.
 Entre os resultados exploratórios produzidos estão:
 
 - `resultados/graficos/notificacoes_dengue_2024.png`
+
 - `resultados/graficos/top10_municipios_dengue_2024.png`
+
 - `resultados/municipios_dengue_2024.csv`
 
 Todos os resultados exploratórios deverão ser reavaliados após a consolidação da base analítica.
 
-## 11. Pendências metodológicas
+## 11. Situação das etapas e pendências metodológicas
 
-Antes da produção dos resultados definitivos, permanecem as seguintes pendências:
+Esta seção registra o estado atual da pesquisa. As decisões e os resultados preliminares das etapas anteriores permanecem documentados nas seções correspondentes.
 
-- Investigar possíveis duplicidades entre arquivos históricos.
-- Esclarecer os códigos de `CLASSI_FIN` não documentados nas fontes consultadas.
-- Investigar a diferença de distribuição das classificações entre 2016–2021 e 2022–2025.
-- Avaliar a consistência da variável `CRITERIO` em todos os anos.
-- Definir os critérios finais de identificação dos casos confirmados.
-- Estabelecer regras de tratamento das datas inconsistentes.
-- Verificar a consistência dos códigos municipais.
-- Avaliar a completude dos dados referentes aos anos mais recentes.
-- Definir o tratamento de registros com datas fora do período de 2016 a 2025.
-- Investigar possíveis alterações de estrutura e cobertura das bases históricas.
-- Obter dados populacionais oficiais para calcular taxas por 100 mil habitantes.
-- Definir os métodos estatísticos para avaliação de tendências e sazonalidade.
+### 11.1. Etapas já realizadas
+
+- Preparação dos dez arquivos históricos, com filtragem inicial por `SG_UF = 23`.
+- Investigação exploratória da variável `CLASSI_FIN` e da distribuição de `CRITERIO`.
+- Investigação exploratória de combinações repetidas dentro dos arquivos e entre anos, **sem confirmação de duplicidade individual e sem exclusão automática**.
+- Construção da base analítica com referência ao início dos sintomas e delimitação do período de 2016 a 2025.
+- Identificação de 62 registros com intervalo entre sintomas e notificação superior a 365 dias; exclusão apenas das análises que aplicam esse filtro, com preservação da base.
+- Consolidação da série temporal mensal e exploração da sazonalidade.
+- Validação dos códigos municipais e identificação dos oito registros sem município cearense válido para a análise espacial.
+- Consolidação das populações municipais de 2016 a 2025 e cálculo das taxas anuais por 100 mil habitantes.
+- Produção dos rankings municipais de 2024, da comparação Brejo Santo × Ceará e do mapa de calor exploratório de 15 municípios.
+
+### 11.2. Pendências que permanecem abertas
+
+- Esclarecer os códigos de `CLASSI_FIN` ainda não interpretados e as diferenças de classificação entre períodos.
+- Investigar a interpretação de `CRITERIO = 3` nos registros classificados como dengue e consolidar a definição operacional de casos para o artigo.
+- Avaliar a sensibilidade dos resultados à inclusão dos 62 registros com atrasos extremos e à eventual existência de duplicidades não detectáveis pelos atributos examinados.
+- Confirmar, nos dados processados, a composição exata dos 435 registros classificados não incluídos no intervalo analítico de 2016 a 2025, incluindo a eventual presença de datas ausentes ou inválidas.
+- Verificar a completude, a cobertura e a comparabilidade das bases históricas, especialmente em 2025.
+- Confirmar documentalmente a razão das diferenças populacionais de Ereré e Pereiro entre as fontes de 2022 e 2023.
+- Obter e validar a malha territorial dos 184 municípios para os mapas geográficos; definir, se pertinente, métodos de análise de agrupamentos espaciais.
+- Definir e executar métodos estatísticos de tendência e sazonalidade, com avaliação das limitações dos dados.
+- Revisar a terminologia, as fontes e as referências segundo as exigências do IFCE e do orientador.
 
 ## 12. Próximas etapas da pesquisa
 
-1. Concluir a investigação das classificações e dos critérios de confirmação.
-2. Verificar possíveis duplicidades e inconsistências entre os arquivos.
-3. Definir e implementar as regras de limpeza.
-4. Construir bases analíticas separadas para notificações e casos classificados como dengue.
-5. Consolidar as séries temporais referentes ao período de 2016 a 2025.
-6. Produzir análises anuais e mensais.
-7. Investigar a distribuição espacial por município.
-8. Calcular taxas por 100 mil habitantes, quando disponíveis os denominadores adequados.
-9. Aplicar técnicas de análise de tendências e sazonalidade.
-10. Interpretar os resultados à luz da documentação e das limitações dos dados.
-11. Elaborar e revisar o artigo científico.
+1. Concluir as verificações metodológicas ainda abertas e registrar as decisões definitivas de inclusão e exclusão.
+2. Avaliar a sensibilidade das séries aos atrasos extremos e a qualidade/completude dos anos recentes.
+3. Obter e validar os limites geográficos municipais do IBGE.
+4. Produzir mapas temáticos para os 184 municípios, distinguindo descrição espacial de testes formais de agrupamento.
+5. Aplicar, quando justificado, métodos estatísticos de tendências e sazonalidade.
+6. Consolidar resultados, limitações e referências no artigo científico.
 
 ## 13. Registro das decisões metodológicas
 
@@ -556,7 +670,9 @@ Posteriormente, a análise foi restringida aos registros com `CLASSI_FIN` igual 
 Foram contabilizados os critérios:
 
 - `1`: laboratorial.
+
 - `2`: clínico-epidemiológico.
+
 - `3`: em investigação.
 
 Os resultados foram consolidados automaticamente e exportados para `resultados/criterios_dengue_2016_2025.csv`.
@@ -564,10 +680,15 @@ Os resultados foram consolidados automaticamente e exportados para `resultados/c
 **Resultados obtidos:**
 
 | Critério | Registros | Percentual |
+
 |---|---:|---:|
+
 | Laboratorial (1) | 73.588 | 34,1% |
+
 | Clínico-epidemiológico (2) | 136.399 | 63,2% |
+
 | Em investigação (3) | 5.761 | 2,7% |
+
 | **Total** | **215.748** | **100%** |
 
 A soma dos registros foi verificada automaticamente pelo Python.
@@ -593,8 +714,11 @@ Os resultados ainda não constituem uma série epidemiológica anual definitiva.
 **Pendências:**
 
 - Investigar os 5.761 registros com `CRITERIO = 3`.
+
 - Verificar possíveis duplicidades entre os arquivos históricos.
+
 - Definir as regras finais de inclusão e exclusão dos registros.
+
 - Consolidar as séries temporais por data de início dos sintomas.
 
 ### 13.8. Investigação exploratória de possíveis duplicidades — 2024
@@ -655,7 +779,7 @@ Utilizar a estrutura abaixo sempre que uma etapa metodológica relevante for con
 
 **Pendências:**
 
-## 15. Referências documentais e técnicas
+## 15. Referências documentais e técnicas (levantamento inicial)
 
 **BRASIL. Ministério da Saúde.** Portal de Dados Abertos. Conjunto de dados de arboviroses — dengue. Disponível em: https://dadosabertos.saude.gov.br/dataset/arboviroses-dengue.
 
@@ -668,6 +792,7 @@ Utilizar a estrutura abaixo sempre que uma etapa metodológica relevante for con
 **Documentação do Matplotlib:** https://matplotlib.org/stable/
 
 As referências bibliográficas serão posteriormente revisadas e padronizadas conforme as exigências do artigo científico e do IFCE.
+
 ## 16. Análise temporal da dengue no Ceará (2016–2025)
 
 ### 16.1. Preparação e validação da base analítica
@@ -678,9 +803,9 @@ Foram identificados 215.748 registros classificados como dengue, considerando os
 
 A análise temporal utilizou a variável `DT_SIN_PRI`, correspondente à data de início dos primeiros sintomas.
 
-Foram identificados 435 registros com início dos sintomas fora do intervalo de 2016 a 2025. Esses registros foram mantidos na base histórica, mas não incluídos na base analítica do período estudado.
+Na delimitação temporal da base, 435 dos 215.748 registros classificados não integraram o conjunto de 2016 a 2025, conforme o filtro aplicado à data de início dos sintomas (`DT_SIN_PRI`). É necessário conferir no arquivo processado se esses 435 registros correspondem exclusivamente a datas válidas fora do período ou se também incluem datas ausentes ou inválidas. Eles não foram apagados dos arquivos históricos.
 
-A base analítica resultante contém 215.313 registros.
+A base analítica resultante contém **215.313 registros** (215.748 − 435). A decomposição dos 435 registros permanece como verificação de qualidade pendente.
 
 ### 16.2. Critérios de qualidade temporal
 
@@ -689,15 +814,18 @@ Foi calculado o intervalo, em dias, entre o início dos sintomas (`DT_SIN_PRI`) 
 Entre os 215.313 registros da base analítica, foram identificados:
 
 - 211.881 registros com intervalo entre 0 e 30 dias;
+
 - 3.370 registros com intervalo entre 31 e 365 dias;
+
 - 62 registros com intervalo superior a 365 dias;
+
 - Nenhum intervalo negativo ou ausente.
 
 Os 62 registros com intervalo superior a 365 dias foram classificados como atrasos extremos e identificados pela variável `ATRASO_EXTREMO`.
 
 Por decisão metodológica, esses registros permaneceram preservados na base analítica, mas foram desconsiderados nos scripts de análise temporal.
 
-Assim, a série histórica temporal foi construída com 215.251 registros.
+Assim, a série histórica temporal foi construída com **215.251 registros** (215.313 − 62). A série municipal, por exigir município de residência válido no Ceará, utiliza 215.243 registros; os dois totais não devem ser confundidos.
 
 Essa decisão não representa comprovação de erro nos registros. Trata-se de um critério operacional de qualidade temporal, sujeito a avaliação de sensibilidade posterior.
 
@@ -708,17 +836,29 @@ Foi criada uma série histórica mensal com 120 observações, correspondentes a
 A distribuição anual dos registros utilizados foi:
 
 | Ano | Registros |
+
 |---|---:|
+
 | 2016 | 41.894 |
+
 | 2017 | 27.055 |
+
 | 2018 | 3.995 |
+
 | 2019 | 15.674 |
+
 | 2020 | 21.451 |
+
 | 2021 | 33.845 |
+
 | 2022 | 39.940 |
+
 | 2023 | 14.220 |
+
 | 2024 | 12.128 |
+
 | 2025 | 5.049 |
+
 | **Total** | **215.251** |
 
 ### 16.4. Análise de sazonalidade
@@ -732,7 +872,9 @@ O menor valor médio ocorreu em dezembro, com 325,2 registros.
 A investigação dos picos anuais identificou que:
 
 - Maio foi o mês de maior registro em cinco anos;
+
 - Abril foi o mês de maior registro em quatro anos;
+
 - Junho foi o mês de maior registro em um ano.
 
 Portanto, em todos os dez anos analisados, os maiores valores mensais ocorreram entre abril e junho.
@@ -744,13 +886,17 @@ O maior pico mensal da série foi registrado em maio de 2022, com 10.601 registr
 Foram produzidos:
 
 1. Série histórica mensal de registros classificados como dengue, de 2016 a 2025.
+
 2. Gráfico de linha da evolução mensal.
+
 3. Mapa de calor da distribuição mensal por ano.
 
 Arquivos principais:
 
 - `resultados/serie_historica_mensal.csv`
+
 - `resultados/graficos/serie_mensal_2016_2025.png`
+
 - `resultados/graficos/mapa_calor_2016_2025.png`
 
 ### 16.6. Limitações e próximos procedimentos
@@ -759,7 +905,7 @@ Os resultados representam registros classificados como dengue presentes nos arqu
 
 Ainda será necessário avaliar a completude dos dados, especialmente de 2025, investigar possíveis efeitos de diferenças na cobertura dos arquivos e realizar uma análise de sensibilidade considerando os 62 registros sinalizados.
 
-A próxima etapa será a análise espacial por município de residência, utilizando a variável `ID_MN_RESI`.
+**Registro histórico da etapa:** a análise por município de residência foi posteriormente iniciada e documentada nas seções 17 a 22.
 
 ## 17. Análise espacial da dengue no Ceará (2016–2025)
 
@@ -777,7 +923,7 @@ Foi desenvolvido o script `scripts/consolidar_dados_municipios.py`, responsável
 
 O processamento gerou o arquivo `resultados/municipios_dengue_2016_2025.csv`, contendo os 184 municípios, seus códigos e a quantidade e participação percentual dos registros.
 
-Os oito registros sem município cearense válido foram preservados na base analítica, mas não incluídos na agregação municipal.
+Os oito registros sem município cearense válido foram preservados na base analítica, mas não incluídos na agregação municipal. Essa exclusão aplica-se apenas à análise por município de residência e ao cálculo das taxas derivadas dessa agregação.
 
 ### 17.3. Resultados preliminares
 
@@ -789,7 +935,7 @@ Foi produzido o gráfico `resultados/graficos/top10_municipios_2016_2025.png`, a
 
 Os totais absolutos não permitem comparar diretamente o risco de dengue entre municípios com populações diferentes.
 
-A próxima etapa será obter dados populacionais oficiais para calcular taxas anuais por 100 mil habitantes e aprofundar a análise espacial.
+**Registro histórico da etapa:** a obtenção dos dados populacionais e o cálculo das taxas, então previstos como próximos passos, foram posteriormente concluídos e estão documentados nas seções 18 e 19.
 
 ## 18. Consolidação da base populacional histórica — 2016 a 2025
 
@@ -804,8 +950,11 @@ Construir uma base populacional municipal histórica para permitir o cálculo de
 Foram utilizados dados oficiais do IBGE:
 
 - 2016 a 2021: estimativas populacionais municipais.
+
 - 2022: Censo Demográfico 2022, tabela 4714 do SIDRA.
-- 2023: população censitária de 2022 com referência à malha municipal de 2023.
+
+- 2023: valores populacionais derivados do Censo de 2022, publicados com referência à malha municipal de 2023; **não se trata de uma estimativa populacional independente para o ano de 2023**.
+
 - 2024 e 2025: estimativas populacionais municipais.
 
 O script `scripts/preparar_populacao_historica.py` foi utilizado para leitura, padronização, validação e consolidação dos arquivos.
@@ -815,11 +964,17 @@ A base final foi salva em `dados/processados/populacao_ceara_historica.csv`.
 ### 18.3. Resultados da validação
 
 - Período: 2016–2025.
+
 - Anos processados: 10.
+
 - Municípios por ano: 184.
+
 - Total de registros: 1.840.
+
 - Códigos IBGE municipais únicos por ano: 184.
+
 - Valores populacionais ausentes: nenhum nas verificações realizadas.
+
 - Totais populacionais estaduais: validados.
 
 ### 18.4. Investigação das diferenças entre 2022 e 2023
@@ -829,28 +984,33 @@ Foi realizada uma comparação das populações municipais dos dois arquivos.
 Ambos apresentam população estadual de 8.794.957 habitantes, mas dois municípios possuem diferenças:
 
 | Município | 2022 | 2023 | Diferença |
+
 |---|---:|---:|---:|
+
 | Ereré | 6.474 | 6.247 | -227 |
+
 | Pereiro | 15.274 | 15.501 | +227 |
 
 Os outros 182 municípios apresentam valores idênticos.
 
-A hipótese de redistribuição territorial permanece pendente de confirmação na documentação do IBGE.
+A hipótese de ajuste ou redistribuição territorial permanece **não confirmada**; a documentação consultada até esta etapa não foi suficiente para estabelecer a causa das diferenças.
 
 **Decisão metodológica:** preservar os valores publicados nas respectivas fontes, sem correções manuais, e documentar a diferença na interpretação dos indicadores.
 
 ### 18.5. Dificuldades encontradas
 
 - Necessidade de instalar a biblioteca `openpyxl` para leitura da tabela 4714 em formato XLSX.
+
 - Diferenças na estrutura dos arquivos populacionais entre os anos.
+
 - Necessidade de tratamento específico para os dados censitários de 2022 e a publicação de 2023.
+
 - Avisos de descontinuação futura do mecanismo `xlrd` na versão utilizada do pandas, sem comprometimento da execução atual.
 
 ### 18.6. Próxima etapa
 
-Relacionar `populacao_ceara_historica.csv` com `municipios_dengue_por_ano.csv` utilizando o código IBGE e o ano.
+**Registro histórico da etapa:** o cruzamento entre `populacao_ceara_historica.csv` e `municipios_dengue_por_ano.csv`, com validação dos 1.840 pares município-ano, foi posteriormente concluído, conforme descrito na seção 19.
 
-Validar a correspondência dos 1.840 pares município-ano e calcular as taxas anuais de registros classificados de dengue por 100 mil habitantes.
 ---
 
 ## 19. Cálculo e validação das taxas municipais de dengue — 2016 a 2025
@@ -866,6 +1026,7 @@ Calcular as taxas anuais de registros classificados de dengue por 100 mil habita
 Foi desenvolvido o script `scripts/calcular_taxas_municipais_historicas.py`, responsável por relacionar os arquivos:
 
 - `resultados/municipios_dengue_por_ano.csv`
+
 - `dados/processados/populacao_ceara_historica.csv`
 
 O cruzamento utilizou o código municipal de seis dígitos e o ano de início dos sintomas. Os códigos IBGE de sete dígitos foram padronizados para permitir a correspondência.
@@ -881,28 +1042,44 @@ O resultado foi salvo em:
 ### 19.3. Validação do processamento
 
 - Municípios: 184.
+
 - Anos: 10, de 2016 a 2025.
+
 - Observações município-ano: 1.840.
+
 - Registros municipais classificados de dengue: 215.243.
+
 - Correspondência com a base populacional: completa.
+
 - Populações ausentes após o cruzamento: nenhuma.
 
 ### 19.4. Taxas anuais agregadas do Ceará
 
 | Ano | Registros | População | Taxa por 100 mil |
+
 |---|---:|---:|---:|
+
 | 2016 | 41.894 | 8.963.663 | 467,38 |
+
 | 2017 | 27.055 | 9.020.460 | 299,93 |
+
 | 2018 | 3.995 | 9.075.649 | 44,02 |
+
 | 2019 | 15.674 | 9.132.078 | 171,64 |
+
 | 2020 | 21.451 | 9.187.103 | 233,49 |
+
 | 2021 | 33.841 | 9.240.580 | 366,22 |
+
 | 2022 | 39.938 | 8.794.957 | 454,10 |
+
 | 2023 | 14.220 | 8.794.957 | 161,68 |
+
 | 2024 | 12.127 | 9.233.656 | 131,33 |
+
 | 2025 | 5.048 | 9.268.836 | 54,46 |
 
-As taxas estaduais foram calculadas pela divisão da soma dos registros municipais pela população total do Ceará em cada ano, evitando o uso de médias simples das taxas municipais.
+As taxas estaduais apresentadas nesta seção foram calculadas pela divisão da soma dos registros **com município cearense válido** pela população total do Ceará em cada ano, evitando o uso de médias simples das taxas municipais. Por esse motivo, os numeradores de 2021, 2022, 2024 e 2025 são ligeiramente inferiores aos da série temporal estadual, que inclui oito registros sem município cearense válido.
 
 ### 19.5. Investigação da diferença entre análises temporal e municipal
 
@@ -911,31 +1088,103 @@ Foi identificada uma diferença de oito registros entre a análise temporal esta
 A investigação da variável `ID_MN_RESI`, após a exclusão dos 62 registros com atraso extremo de notificação, identificou:
 
 - Seis registros sem código de município de residência.
+
 - Um registro com código municipal `353440`.
+
 - Um registro com código municipal `420910`.
 
 Distribuição anual dos oito registros:
 
 | Ano | Registros sem município cearense válido |
+
 |---|---:|
+
 | 2021 | 4 |
+
 | 2022 | 2 |
+
 | 2024 | 1 |
+
 | 2025 | 1 |
+
 | **Total** | **8** |
 
 **Decisão metodológica:** manter os 215.251 registros na análise temporal estadual e utilizar 215.243 registros na análise espacial municipal, excluindo desta última os oito registros sem correspondência com os municípios do Ceará.
 
-Os arquivos originais e a base analítica foram preservados, sem alterações manuais.
+Os arquivos originais e a base analítica foram preservados, sem alterações manuais. A inclusão desses oito registros na série temporal estadual decorre do critério inicial `SG_UF = 23`; a ausência de correspondência de `ID_MN_RESI` com um município cearense impede atribuí-los espacialmente a um dos 184 municípios. Essa diferença de campos deve ser descrita como limitação da seleção geográfica.
 
 ### 19.6. Observações e limitações
 
 As taxas representam os registros classificados de dengue disponíveis na base analítica e não devem ser interpretadas automaticamente como indicadores oficiais de incidência.
 
-A interpretação temporal também deve considerar as diferenças entre estimativas populacionais e dados censitários, especialmente em 2022 e 2023, além da necessidade de verificar a completude dos registros de 2025.
+A interpretação temporal deve considerar a descontinuidade entre estimativas populacionais e dados censitários, especialmente em 2022 e 2023. Como o denominador de 2023 foi derivado do Censo 2022, sua utilização limita a interpretação de variações anuais das taxas. Também é necessário verificar a completude dos registros de 2025.
 
 ### 19.7. Próxima etapa
 
 Investigar os municípios com maiores taxas anuais de registros de dengue, gerar gráficos comparativos e avaliar a evolução espacial e temporal das taxas no período de 2016 a 2025.
 
-*Documento interno de acompanhamento da pesquisa. Os resultados apresentados são preliminares e estão sujeitos a verificações, revisões metodológicas e validação científica antes de sua utilização no artigo final.*
+## 20. Análise comparativa municipal — 2024
+
+Foi realizada uma análise das taxas de registros classificados de dengue por 100 mil habitantes nos 184 municípios do Ceará, utilizando o arquivo `resultados/taxas_dengue_municipios_2016_2025.csv`.
+
+O ranking das maiores taxas identificou Brejo Santo (4.425,60), Porteiras (2.688,08), Altaneira (2.568,15) e Penaforte (2.213,15) nas primeiras posições.
+
+Dos 184 municípios, 37 apresentaram taxas superiores à taxa estadual de 131,33 registros por 100 mil habitantes, enquanto cinco não apresentaram registros classificados na base analisada em 2024.
+
+Foi gerado o gráfico `resultados/graficos/top10_taxas_dengue_2024.png`, apresentando os dez municípios com maiores taxas.
+
+Na comparação com os números absolutos, Fortaleza apresentou o maior total de registros (3.403), mas sua taxa foi de 132,19 por 100 mil habitantes. Brejo Santo apresentou 2.380 registros e taxa de 4.425,60 por 100 mil habitantes.
+
+A comparação mostrou que os rankings por números absolutos e por taxas populacionais diferem, reforçando a importância da padronização populacional para interpretar a distribuição municipal dos registros. A comparação é descritiva; não foi realizado teste estatístico de significância.
+
+**Encaminhamento registrado à época:** ampliar a comparação para 2016–2025. Essa investigação foi posteriormente iniciada nas seções 21 e 22.
+
+## 21. Comparação histórica das taxas de dengue — Brejo Santo e Ceará (2016–2025)
+
+Foi realizada uma comparação entre as taxas anuais de registros classificados de dengue em Brejo Santo e no conjunto dos municípios do Ceará, utilizando indicadores por 100 mil habitantes.
+
+A análise identificou diferenças expressivas entre o comportamento municipal e o estadual.
+
+Em 2017, Brejo Santo apresentou taxa de 2.877,33 registros por 100 mil habitantes, aproximadamente 9,59 vezes a taxa estadual de 299,93.
+
+Em 2023, a taxa municipal atingiu 3.491,88, enquanto a estadual foi de 161,68, correspondendo a uma razão de 21,60.
+
+Em 2024, Brejo Santo apresentou a maior taxa da série histórica, com 4.425,60 registros por 100 mil habitantes, aproximadamente 33,70 vezes a taxa estadual de 131,33.
+
+Em oito dos dez anos analisados, a taxa municipal superou a estadual. As exceções ocorreram em 2016 e 2021.
+
+Foi desenvolvido o script `scripts/grafico_comparativo_brejo_ceara.py`, responsável por gerar a figura:
+
+`resultados/graficos/comparativo_brejo_ceara_2016_2025.png`
+
+**Interpretação preliminar:** os resultados indicam diferenças temporais importantes entre Brejo Santo e o conjunto do Ceará. Entretanto, a análise descritiva não permite estabelecer as causas dessas diferenças.
+
+**Limitação:** os dados de 2025 devem ser interpretados considerando a possibilidade de incompletude dos registros.
+
+**Encaminhamento registrado à época:** investigar a distribuição histórica das taxas nos municípios. A análise exploratória de recorrência e o mapa de calor de 15 municípios foram realizados posteriormente, conforme a seção 22; a representação geográfica dos 184 municípios permanece pendente.
+
+## 22. Análise histórica municipal por mapa de calor — 2016 a 2025
+
+Foi desenvolvido o script `scripts/heatmap_taxas_municipais.py`, utilizando Pandas, Matplotlib e Seaborn para representar graficamente as taxas anuais de registros classificados de dengue.
+
+Foram selecionados os 15 municípios com maior recorrência de taxas superiores à taxa estadual, considerando o período de 2016 a 2025.
+
+O gráfico foi salvo em:
+
+`resultados/graficos/heatmap_taxas_municipais.png`
+
+A análise visual identificou diferenças importantes entre os padrões temporais municipais.
+
+Brejo Santo apresentou picos em 2017, 2023 e 2024. Quixeré apresentou taxas elevadas em 2019 e 2021. Tabuleiro do Norte apresentou valores expressivos em diferentes anos, enquanto Aratuba registrou uma taxa particularmente elevada em 2022.
+
+Quatro municípios apresentaram taxas superiores à estadual em oito dos dez anos: Brejo Santo, Quixeré, Tabuleiro do Norte e Fortaleza.
+
+**Conclusão preliminar:** os resultados evidenciam heterogeneidade temporal entre os municípios selecionados, com períodos de maior concentração de registros classificados de dengue ocorrendo em anos distintos.
+
+A análise é descritiva e não permite determinar as causas dessas diferenças.
+
+**Limitações:** a seleção dos municípios baseou-se na recorrência relativa à taxa estadual. Os resultados não representam a totalidade dos padrões municipais do Ceará. Os dados de 2025 também exigem avaliação de completude.
+
+**Próxima etapa:** ampliar a representação geográfica para os 184 municípios do Ceará. A identificação de possíveis agrupamentos espaciais exigirá método específico e não pode ser inferida apenas do mapa de calor temporal.
+
+**Documento interno de acompanhamento da pesquisa. Os resultados apresentados são preliminares e estão sujeitos a verificações, revisões metodológicas e validação científica antes de sua utilização no artigo final.**
