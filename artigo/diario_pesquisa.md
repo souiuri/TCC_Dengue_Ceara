@@ -853,4 +853,89 @@ Relacionar `populacao_ceara_historica.csv` com `municipios_dengue_por_ano.csv` u
 Validar a correspondência dos 1.840 pares município-ano e calcular as taxas anuais de registros classificados de dengue por 100 mil habitantes.
 ---
 
+## 19. Cálculo e validação das taxas municipais de dengue — 2016 a 2025
+
+**Situação:** etapa concluída e validada.
+
+### 19.1. Objetivo
+
+Calcular as taxas anuais de registros classificados de dengue por 100 mil habitantes nos 184 municípios do Ceará, utilizando a base analítica do Ministério da Saúde e os dados populacionais do IBGE.
+
+### 19.2. Procedimento
+
+Foi desenvolvido o script `scripts/calcular_taxas_municipais_historicas.py`, responsável por relacionar os arquivos:
+
+- `resultados/municipios_dengue_por_ano.csv`
+- `dados/processados/populacao_ceara_historica.csv`
+
+O cruzamento utilizou o código municipal de seis dígitos e o ano de início dos sintomas. Os códigos IBGE de sete dígitos foram padronizados para permitir a correspondência.
+
+A taxa foi calculada pela fórmula:
+
+**Taxa por 100 mil habitantes = (Total de registros / População municipal) × 100.000**
+
+O resultado foi salvo em:
+
+`resultados/taxas_dengue_municipios_2016_2025.csv`
+
+### 19.3. Validação do processamento
+
+- Municípios: 184.
+- Anos: 10, de 2016 a 2025.
+- Observações município-ano: 1.840.
+- Registros municipais classificados de dengue: 215.243.
+- Correspondência com a base populacional: completa.
+- Populações ausentes após o cruzamento: nenhuma.
+
+### 19.4. Taxas anuais agregadas do Ceará
+
+| Ano | Registros | População | Taxa por 100 mil |
+|---|---:|---:|---:|
+| 2016 | 41.894 | 8.963.663 | 467,38 |
+| 2017 | 27.055 | 9.020.460 | 299,93 |
+| 2018 | 3.995 | 9.075.649 | 44,02 |
+| 2019 | 15.674 | 9.132.078 | 171,64 |
+| 2020 | 21.451 | 9.187.103 | 233,49 |
+| 2021 | 33.841 | 9.240.580 | 366,22 |
+| 2022 | 39.938 | 8.794.957 | 454,10 |
+| 2023 | 14.220 | 8.794.957 | 161,68 |
+| 2024 | 12.127 | 9.233.656 | 131,33 |
+| 2025 | 5.048 | 9.268.836 | 54,46 |
+
+As taxas estaduais foram calculadas pela divisão da soma dos registros municipais pela população total do Ceará em cada ano, evitando o uso de médias simples das taxas municipais.
+
+### 19.5. Investigação da diferença entre análises temporal e municipal
+
+Foi identificada uma diferença de oito registros entre a análise temporal estadual, com 215.251 registros, e a análise municipal, com 215.243.
+
+A investigação da variável `ID_MN_RESI`, após a exclusão dos 62 registros com atraso extremo de notificação, identificou:
+
+- Seis registros sem código de município de residência.
+- Um registro com código municipal `353440`.
+- Um registro com código municipal `420910`.
+
+Distribuição anual dos oito registros:
+
+| Ano | Registros sem município cearense válido |
+|---|---:|
+| 2021 | 4 |
+| 2022 | 2 |
+| 2024 | 1 |
+| 2025 | 1 |
+| **Total** | **8** |
+
+**Decisão metodológica:** manter os 215.251 registros na análise temporal estadual e utilizar 215.243 registros na análise espacial municipal, excluindo desta última os oito registros sem correspondência com os municípios do Ceará.
+
+Os arquivos originais e a base analítica foram preservados, sem alterações manuais.
+
+### 19.6. Observações e limitações
+
+As taxas representam os registros classificados de dengue disponíveis na base analítica e não devem ser interpretadas automaticamente como indicadores oficiais de incidência.
+
+A interpretação temporal também deve considerar as diferenças entre estimativas populacionais e dados censitários, especialmente em 2022 e 2023, além da necessidade de verificar a completude dos registros de 2025.
+
+### 19.7. Próxima etapa
+
+Investigar os municípios com maiores taxas anuais de registros de dengue, gerar gráficos comparativos e avaliar a evolução espacial e temporal das taxas no período de 2016 a 2025.
+
 *Documento interno de acompanhamento da pesquisa. Os resultados apresentados são preliminares e estão sujeitos a verificações, revisões metodológicas e validação científica antes de sua utilização no artigo final.*

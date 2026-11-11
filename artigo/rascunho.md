@@ -110,6 +110,16 @@ As taxas calculadas serão interpretadas como indicadores derivados da base anal
 
 A utilização de dados censitários e estimativas populacionais de diferentes referências temporais e territoriais constitui uma limitação metodológica a ser considerada na comparação entre anos.
 
+### 3.6.2 Tratamento dos registros sem município de residência válido
+
+Após a aplicação dos critérios de seleção temporal e exclusão dos registros com atrasos extremos de notificação, a base analítica apresentou 215.251 registros classificados como dengue no Ceará, referentes ao período de 2016 a 2025.
+
+Para a análise espacial municipal, foi realizada uma validação dos códigos de município de residência (`ID_MN_RESI`), utilizando como referência os 184 municípios do Ceará identificados na base populacional do IBGE.
+
+Foram identificados oito registros sem correspondência com os municípios cearenses: seis com código de município ausente e dois com códigos associados a municípios de outras unidades federativas. Esses registros foram excluídos exclusivamente da análise municipal, permanecendo na análise temporal estadual.
+
+Dessa forma, a análise espacial e o cálculo das taxas municipais consideraram 215.243 registros, distribuídos entre os 184 municípios do Ceará ao longo do período estudado.
+
 ### 3.7 Análise de tendências
 
 Na etapa final, serão aplicadas técnicas de análise de séries temporais para investigar tendências e padrões sazonais. Os métodos estatísticos específicos serão definidos após a consolidação e avaliação da qualidade da série histórica.
