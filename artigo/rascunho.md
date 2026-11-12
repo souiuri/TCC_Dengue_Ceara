@@ -32,9 +32,53 @@ Analisar a evolução temporal e a distribuição municipal dos registros classi
 
 ## 2. Fundamentação teórica
 
-*Seção pendente de revisão bibliográfica. Não inserir afirmações específicas sem referências verificadas.*
+### 2.1. Dengue e vigilância epidemiológica
 
-Tópicos previstos: dengue e vigilância epidemiológica; sistemas de informação em saúde; qualidade de dados secundários; análise exploratória; séries temporais e sazonalidade; taxas populacionais; análise espacial municipal.
+A dengue é uma doença infecciosa causada pelo vírus da dengue (DENV), transmitido aos seres humanos principalmente pela picada de mosquitos infectados da espécie *Aedes aegypti*. Sua ocorrência é especialmente relevante em regiões tropicais e subtropicais, constituindo um importante desafio para a saúde pública (ORGANIZAÇÃO MUNDIAL DA SAÚDE, 2025).
+
+No Brasil, a dengue integra a lista de doenças de notificação compulsória. Os casos suspeitos e confirmados devem ser comunicados aos serviços de vigilância epidemiológica, sendo seus registros inseridos no Sistema de Informação de Agravos de Notificação (Sinan). Esse processo contribui para o acompanhamento da situação epidemiológica e para o planejamento das ações de prevenção e controle (BRASIL, 2022).
+
+A utilização de dados secundários provenientes dos sistemas de vigilância permite examinar a distribuição temporal e geográfica dos registros de dengue. Entretanto, sua interpretação exige atenção aos critérios de classificação, à qualidade do preenchimento e às diferenças entre notificações, registros classificados e indicadores oficiais de incidência.
+
+Nesse contexto, a análise computacional de dados públicos constitui uma abordagem relevante para descrever padrões epidemiológicos. No presente estudo, essa abordagem é aplicada aos registros classificados como dengue no Ceará entre 2016 e 2025, considerando sua evolução temporal e distribuição espacial.
+
+### 2.2. Sazonalidade da dengue e fatores climáticos
+
+A dengue apresenta variações temporais relacionadas a fatores ambientais, climáticos e epidemiológicos. A precipitação, a temperatura e a umidade podem influenciar as condições de desenvolvimento e sobrevivência do mosquito *Aedes aegypti*, contribuindo para alterações na dinâmica de transmissão da doença.
+
+Soares, Araújo e Almeida (2021), ao investigarem a ocorrência de dengue em Fortaleza entre 2014 e 2019, identificaram relações entre os registros da doença e variáveis meteorológicas, incluindo precipitação, temperatura e velocidade do vento.
+
+Costa e Araújo (2021) analisaram a relação entre precipitação e dengue em quatro municípios cearenses com características geográficas distintas: Aquiraz, Boa Viagem, Viçosa do Ceará e Brejo Santo. Os autores observaram diferenças entre os municípios, demonstrando que a distribuição temporal da doença não pode ser explicada exclusivamente pelo volume de chuvas.
+
+Magalhães e Zanella (2013), em estudo sobre a Região Metropolitana de Fortaleza, identificaram que, em determinados anos, os maiores totais de dengue ocorreram após períodos de precipitação elevada, evidenciando a importância de considerar possíveis defasagens temporais entre as condições meteorológicas e os registros da doença.
+
+Dessa forma, a análise da sazonalidade constitui uma ferramenta importante para compreender a distribuição temporal da dengue. Entretanto, a identificação de associações entre registros epidemiológicos e fatores climáticos exige a integração de dados meteorológicos e a aplicação de métodos estatísticos apropriados.
+
+### 2.3. Análise espacial e geoprocessamento aplicados à dengue
+
+A análise espacial constitui uma abordagem relevante para a investigação da distribuição geográfica de doenças, permitindo identificar diferenças territoriais e examinar padrões de ocorrência em unidades geográficas distintas. No contexto da dengue, técnicas de geoprocessamento possibilitam representar indicadores epidemiológicos por meio de mapas temáticos e investigar sua distribuição no território.
+
+Araújo, Ferreira e Abreu (2008), em revisão sistemática sobre estudos de espacialização da dengue no Brasil, destacaram a utilização de técnicas de geoprocessamento na investigação da doença e de seu vetor. Essas ferramentas contribuem para a representação e interpretação da distribuição geográfica dos registros epidemiológicos.
+
+Silva et al. (2020), ao analisarem a distribuição espacial da dengue nos 223 municípios da Paraíba entre 2007 e 2016, utilizaram técnicas de autocorrelação espacial, incluindo os índices de Moran global e local. Os autores identificaram dependência espacial significativa e destacaram a importância de considerar fatores socioambientais na interpretação da distribuição da doença.
+
+A utilização de taxas populacionais permite comparar municípios com diferentes tamanhos populacionais, reduzindo as distorções decorrentes da análise exclusiva de números absolutos. A representação cartográfica desses indicadores facilita a identificação visual de diferenças territoriais, embora a presença de áreas com taxas elevadas não constitua, isoladamente, comprovação estatística de agrupamentos espaciais.
+
+Para a análise regional, o Instituto Brasileiro de Geografia e Estatística (IBGE) disponibiliza a Divisão Regional do Brasil em Regiões Geográficas Imediatas e Intermediárias, publicada em 2017. Essa regionalização considera a organização territorial e as articulações entre centros urbanos, fornecendo unidades de referência para análises estatísticas e geográficas (IBGE, 2017).
+
+No presente estudo, essas abordagens fundamentam a utilização de mapas temáticos, taxas municipais por 100 mil habitantes e agregações por Regiões Geográficas Imediatas do Ceará. A análise realizada possui caráter descritivo e exploratório, sem aplicação, nesta etapa, de testes formais de autocorrelação espacial.
+
+### 2.4. Ciência de dados e Python aplicados à saúde pública
+
+A crescente disponibilidade de bases públicas de informações em saúde amplia as possibilidades de utilização de métodos computacionais para investigar a distribuição temporal e espacial de doenças. Nesse contexto, a ciência de dados reúne técnicas de coleta, organização, processamento, análise e visualização de informações, permitindo transformar grandes volumes de registros em indicadores úteis à pesquisa científica.
+
+A linguagem de programação Python apresenta recursos para o desenvolvimento de procedimentos de análise de dados, incluindo manipulação de tabelas, tratamento de valores ausentes, integração de diferentes fontes e elaboração de representações gráficas. Sua utilização em pesquisas quantitativas possibilita a automatização de tarefas e a documentação dos procedimentos empregados.
+
+McKinney (2010) apresentou o pandas como uma biblioteca voltada à manipulação e à análise de dados estruturados em Python. Seus recursos permitem realizar operações de filtragem, agrupamento, integração e transformação de tabelas, fundamentais para o processamento de bases epidemiológicas.
+
+Hunter (2007) descreveu o Matplotlib como uma biblioteca para a construção de visualizações científicas em Python. A ferramenta permite produzir gráficos que auxiliam na identificação de tendências, variações temporais e diferenças entre grupos de observações.
+
+No campo da análise geográfica, o GeoPandas amplia as funcionalidades de manipulação de dados tabulares
 
 ## 3. Metodologia
 
