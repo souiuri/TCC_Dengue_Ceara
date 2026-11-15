@@ -2,7 +2,7 @@ from pathlib import Path
 import pandas as pd
 
 # Pasta do projeto e dos arquivos originais
-PASTA_PROJETO = Path(__file__).resolve().parent.parent
+PASTA_PROJETO = Path(__file__).resolve().parents[2]
 PASTA_ORIGINAIS = PASTA_PROJETO / "dados" / "originais"
 PASTA_PROCESSADOS = PASTA_PROJETO / "dados" / "processados"
 

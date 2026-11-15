@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sns
 
-RAIZ = Path(__file__).resolve().parent.parent
+RAIZ = Path(__file__).resolve().parents[2]
 
 ENTRADA = RAIZ / "resultados/taxas_dengue_municipios_2016_2025.csv"
 SAIDA = RAIZ / "resultados/graficos/heatmap_taxas_municipais.png"

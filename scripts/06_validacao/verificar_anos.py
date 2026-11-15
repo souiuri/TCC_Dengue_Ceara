@@ -2,7 +2,7 @@
 from pathlib import Path
 import pandas as pd
 
-PASTA_PROJETO = Path(__file__).resolve().parent.parent
+PASTA_PROJETO = Path(__file__).resolve().parents[2]
 PASTA_DADOS = PASTA_PROJETO / "dados" / "processados"
 
 for ano in range(2016, 2026):

@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from pathlib import Path
 
 # Localizar as pastas do projeto
-projeto = Path(__file__).resolve().parent.parent
+projeto = Path(__file__).resolve().parents[2]
 arquivo = projeto / "dados" / "dengue_ceara_2024.csv"
 pasta_graficos = projeto / "resultados" / "graficos"
 

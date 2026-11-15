@@ -7,7 +7,7 @@ import pandas as pd
 
 
 # Configuração dos caminhos
-RAIZ = Path(__file__).resolve().parent.parent
+RAIZ = Path(__file__).resolve().parents[2]
 
 ARQUIVO = RAIZ / "dados/processados/dengue_ceara_analitica.csv"
 SAIDA = RAIZ / "resultados/municipios_dengue_2016_2025.csv"

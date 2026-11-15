@@ -2,7 +2,7 @@
 import pandas as pd
 from pathlib import Path
 
-projeto = Path(__file__).resolve().parent.parent
+projeto = Path(__file__).resolve().parents[2]
 arquivo = projeto / "dados" / "dengue_ceara_2024.csv"
 
 df = pd.read_csv(arquivo, dtype=str)

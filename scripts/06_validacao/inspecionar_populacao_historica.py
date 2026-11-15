@@ -2,7 +2,7 @@
 from pathlib import Path
 import pandas as pd
 
-RAIZ = Path(__file__).resolve().parent.parent
+RAIZ = Path(__file__).resolve().parents[2]
 PASTA = RAIZ / "dados/originais/populacao"
 
 arquivos = sorted(PASTA.glob("POP20*.xls"))

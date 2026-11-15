@@ -2,7 +2,7 @@
 from pathlib import Path
 import pandas as pd
 
-pasta = Path(__file__).resolve().parent.parent / "dados" / "originais"
+pasta = Path(__file__).resolve().parents[2] / "dados" / "originais"
 
 colunas_necessarias = [
     "NU_ANO",

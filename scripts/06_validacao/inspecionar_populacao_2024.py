@@ -1,7 +1,7 @@
 from pathlib import Path
 import pandas as pd
 
-RAIZ = Path(__file__).resolve().parent.parent
+RAIZ = Path(__file__).resolve().parents[2]
 ARQUIVO = RAIZ / "dados/originais/populacao/POP2024_20241230.xls"
 
 excel = pd.ExcelFile(ARQUIVO, engine="xlrd")

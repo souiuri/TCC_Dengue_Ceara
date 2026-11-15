@@ -2,7 +2,7 @@
 from pathlib import Path
 import pandas as pd
 
-pasta = Path(__file__).resolve().parent.parent / "dados" / "processados"
+pasta = Path(__file__).resolve().parents[2] / "dados" / "processados"
 
 for ano in range(2016, 2026):
     arquivo = pasta / f"DENGBR{str(ano)[-2:]}_CE.csv"

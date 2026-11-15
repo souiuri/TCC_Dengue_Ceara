@@ -7,7 +7,7 @@ import gzip
 
 
 # Caminhos e fonte oficial do IBGE
-RAIZ = Path(__file__).resolve().parent.parent
+RAIZ = Path(__file__).resolve().parents[2]
 
 ARQUIVO = (
     RAIZ / "dados" / "processados"

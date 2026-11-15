@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 
 
 # Caminhos dos arquivos
-RAIZ = Path(__file__).resolve().parent.parent
+RAIZ = Path(__file__).resolve().parents[2]
 
 ENTRADA = RAIZ / "resultados/municipios_dengue_2016_2025.csv"
 SAIDA = RAIZ / "resultados/graficos/top10_municipios_2016_2025.png"

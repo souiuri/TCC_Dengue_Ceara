@@ -5,7 +5,7 @@ import re
 import unicodedata
 import pandas as pd
 
-RAIZ = Path(__file__).resolve().parent.parent
+RAIZ = Path(__file__).resolve().parents[2]
 ORIGEM = RAIZ / "dados/originais/populacao"
 SAIDA = RAIZ / "dados/processados/populacao_ceara_historica.csv"
 

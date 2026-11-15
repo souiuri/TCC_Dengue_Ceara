@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from pathlib import Path
 
-projeto = Path(__file__).resolve().parent.parent
+projeto = Path(__file__).resolve().parents[2]
 arquivo = projeto / "dados" / "dengue_ceara_2024.csv"
 pasta_graficos = projeto / "resultados" / "graficos"
 pasta_graficos.mkdir(parents=True, exist_ok=True)

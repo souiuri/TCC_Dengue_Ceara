@@ -2,7 +2,7 @@
 from pathlib import Path
 import pandas as pd
 
-RAIZ = Path(__file__).resolve().parent.parent
+RAIZ = Path(__file__).resolve().parents[2]
 
 arquivo = RAIZ / "dados" / "processados" / "dengue_ceara_analitica.csv"
 

@@ -2,7 +2,7 @@
 from pathlib import Path
 import pandas as pd
 
-pasta = Path(__file__).resolve().parent.parent / "dados" / "processados"
+pasta = Path(__file__).resolve().parents[2] / "dados" / "processados"
 resultados = []
 
 for ano in range(2016, 2026):
@@ -35,7 +35,7 @@ for ano in range(2016, 2026):
         "mais_de_365_dias": int((intervalo > 365).sum()),
         "datas_invalidas": int(intervalo.isna().sum())
     })
-pasta_resultados = Path(__file__).resolve().parent.parent / "resultados"
+pasta_resultados = Path(__file__).resolve().parents[2] / "resultados"
 pasta_resultados.mkdir(parents=True, exist_ok=True)
 
 relatorio = pd.DataFrame(resultados)

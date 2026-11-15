@@ -8,7 +8,7 @@ arquivo_entrada = Path(
 )
 
 # Pasta do projeto
-pasta_projeto = Path(__file__).resolve().parent.parent
+pasta_projeto = Path(__file__).resolve().parents[2]
 
 # Arquivo de saída
 arquivo_saida = pasta_projeto / "dados" / "dengue_ceara_2024.csv"
