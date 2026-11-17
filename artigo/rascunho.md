@@ -222,3 +222,27 @@ Os registros selecionados não equivalem necessariamente a casos únicos ou à i
 - BRASIL. Ministério da Saúde. **Nota Informativa nº 59/2016 — CGPNCD/DEVIT/SVS/MS**. *Dados bibliográficos completos a conferir.*
 - IBGE. **Censo Demográfico 2022, SIDRA, tabela 4714**. *Referência e data de acesso a completar.*
 - IBGE. **Estimativas populacionais municipais e publicação censitária com referência territorial de 2023**. *Identificação individual das publicações a completar.*
+
+ARAÚJO, José Raimundo de; FERREIRA, Efigênia Ferreira e; ABREU, Mauro Henrique Nogueira Guimarães de. Revisão sistemática sobre estudos de espacialização da dengue no Brasil. **Revista Brasileira de Epidemiologia**, v. 11, n. 4, p. 696–708, 2008. Disponível em: https://doi.org/10.1590/S1415-790X2008000400016. Acesso em: 12 nov. 2026.
+
+BRASIL. Ministério da Saúde. **Dengue: diagnóstico e manejo clínico: adulto e criança**. 6. ed. Brasília, DF: Ministério da Saúde, 2024. Disponível em: https://bvsms.saude.gov.br/bvs/publicacoes/dengue_diagnostico_manejo_clinico_6ed.pdf. Acesso em: 12 nov. 2026.
+
+BRASIL. Ministério da Saúde. **Guia de vigilância em saúde: volume 2**. 6. ed. rev. Brasília, DF: Ministério da Saúde, [s. d.]. Disponível em: https://www.gov.br/saude/pt-br/centrais-de-conteudo/publicacoes/svsa/vigilancia/guia-de-vigilancia-em-saude-volume-2-6a-edicao/view. Acesso em: 12 nov. 2026.
+
+BRASIL. Ministério da Saúde. **Portal de Dados Abertos: arboviroses — dengue**. Brasília, DF: Ministério da Saúde, [s. d.]. Disponível em: https://dadosabertos.saude.gov.br/dataset/arboviroses-dengue. Acesso em: 12 nov. 2026.
+
+HUNTER, John D. Matplotlib: a 2D graphics environment. **Computing in Science & Engineering**, v. 9, n. 3, p. 90–95, 2007. Disponível em: https://doi.org/10.1109/MCSE.2007.55. Acesso em: 12 nov. 2026.
+
+INSTITUTO BRASILEIRO DE GEOGRAFIA E ESTATÍSTICA (IBGE). **Censo Demográfico 2022: tabela 4714 — população residente, área territorial e densidade demográfica**. Rio de Janeiro: IBGE, [s. d.]. Disponível em: https://sidra.ibge.gov.br/tabela/4714. Acesso em: 12 nov. 2026.
+
+INSTITUTO BRASILEIRO DE GEOGRAFIA E ESTATÍSTICA (IBGE). **Divisão regional do Brasil em regiões geográficas imediatas e regiões geográficas intermediárias: 2017**. Rio de Janeiro: IBGE, 2017. Disponível em: https://biblioteca.ibge.gov.br/visualizacao/livros/liv100600.pdf. Acesso em: 12 nov. 2026.
+
+JORDAHL, Kelsey et al. **geopandas/geopandas: v0.8.1**. Zenodo, 2020. Software. Disponível em: https://doi.org/10.5281/zenodo.3946761. Acesso em: 12 nov. 2026.
+
+MAGALHÃES, Gledson Bezerra; ZANELLA, Maria Elisa. Comportamento espacial da dengue e sua relação com o clima na Região Metropolitana de Fortaleza. **Revista Brasileira de Climatologia**, v. 12, n. 1, 2013. Disponível em: https://doi.org/10.5380/abclima.v12i1.32180. Acesso em: 12 nov. 2026.
+
+MCKINNEY, Wes. Data structures for statistical computing in Python. In: **PROCEEDINGS OF THE 9TH PYTHON IN SCIENCE CONFERENCE**, 2010. Anais [...]. 2010. Disponível em: https://doi.org/10.25080/Majora-92bf1922-00a. Acesso em: 12 nov. 2026.
+
+ORGANIZAÇÃO MUNDIAL DA SAÚDE (OMS). **Dengue**. Genebra: OMS, 2025. Disponível em: https://www.who.int/news-room/fact-sheets/detail/dengue-and-severe-dengue. Acesso em: 12 nov. 2026.
+
+SILVA, Ellen Tayanne Carla da et al. Análise espacial da distribuição dos casos de dengue e sua relação com fatores socioambientais no estado da Paraíba, Brasil, 2007–2016. **Saúde em Debate**, v. 44, n. 125, 2020. Disponível em: https://doi.org/10.1590/0103-1104202012514. Acesso em: 12 nov. 2026.
