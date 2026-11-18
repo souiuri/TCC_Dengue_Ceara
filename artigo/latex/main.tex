@@ -1,0 +1,68 @@
+\documentclass[        
+    a4paper,          % Tamanho da folha A4
+    12pt,             % Tamanho da fonte 12pt
+    chapter=TITLE,    % Todos os capitulos devem ter caixa alta
+    section=Title,    % Todas as secoes devem ter caixa alta somente na primeira letra
+    subsection=Title, % Todas as subsecoes devem ter caixa alta somente na primeira letra
+    oneside,          % Usada para impressao em apenas uma face do papel
+    english,          % Hifenizacoes em ingles
+    spanish,          % Hifenizacoes em espanhol
+    brazil,           % Ultimo idioma eh o idioma padrao do documento
+    %fleqn             % Comente esta linha se quiser centralizar as equacoes. Comente também a linha 65 abaixo
+]{abntex2}
+
+\input{Lib/Preambulo}
+\date{}
+%\setlength{\mathindent}{0pt} %Complementa o alinhamento de equações para totalmente a esquerda.
+    
+% Ativar indentação no primeiro parágrafo após títulos de seção
+\makeatletter
+\patchcmd{\@startsection}{\@afterindentfalse}{\@afterindenttrue}{}{}
+\makeatother
+
+\begin{document}
+
+% Configurar o tamanho da indentação globalmente
+\setlength{\parindent}{1.5em}
+
+
+
+\title{
+    \normalsize \uppercase{\textbf{Análise Temporal e Espacial da Dengue no Estado do Ceará entre 2016 e 2025 Utilizando Análise de Dados}}
+    \vspace{0.5cm}
+    \begin{flushright}
+        Victor Iuri Costa Sousa\thanks{Graduando em Ciência da Computação, Instituto Federal de Educação, Ciência e Tecnologia do Ceará, Maracanaú, Brasil. E-mail: victor.iuri.costa60@aluno.ifce.edu.br} \\
+        Fabio Jose Gomes de Sousa\thanks{Professor do Instituto Federal de Educação, Ciência e Tecnologia do Ceará, Maracanaú, Brasil. E-mail: fabio.jose@ifce.edu.br}
+    \end{flushright}
+}
+
+
+\maketitle
+\vspace{-12em}
+\thispagestyle{empty}
+
+
+
+\input{01-Pre-Textual/Resumo}
+
+
+\input{01-Pre-Textual/Abstract}
+\pagestyle{abntheadings}
+
+
+\vspace{0.5cm}
+\input{02-Secoes/01 Introducao}
+\vspace{0.5cm}
+\input{02-Secoes/02 Trabalhos Relacionados}
+\vspace{0.5cm}
+\input{02-Secoes/03 Fundamentacao Teorica}
+\vspace{0.5cm}
+\input{02-Secoes/04 Metodologia}
+\vspace{0.5cm}
+\input{02-Secoes/05 Resultados}
+\vspace{0.5cm}
+\input{02-Secoes/06 Conclusao}
+
+\bibliography{03-pos-textual/referencias}
+
+\end{document}

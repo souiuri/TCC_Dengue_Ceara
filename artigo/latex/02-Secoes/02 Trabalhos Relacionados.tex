@@ -1,0 +1,43 @@
+\begingroup
+\let\clearpage\relax
+\chapter{Trabalhos Relacionados}\label{sec:trabalhos-relacionados}
+\endgroup
+
+Nesta seção, são apresentados trabalhos relacionados ao tema abordado neste estudo, destacando contribuições relevantes da literatura. O uso de citações no \LaTeX~é uma ferramenta essencial para referenciar autores e obras que fundamentam a pesquisa. No \LaTeX, as citações podem ser feitas de duas formas principais: 
+
+\begin{itemize}
+
+
+
+    \item Citação direta no texto: Utiliza-se o comando "\verb|\cite{autor2023}|". Por exemplo, o trabalho de \cite{lamport1986latex} é uma referência clássica sobre o uso do \LaTeX. Esse comando insere a referência entre parênteses, conforme as normas da ABNT.
+
+    \item Citação no corpo do texto: Utiliza-se o comando "\verb|\citeonline{autor2024}|". Por exemplo, conforme discutido por \citeonline{wessberg2000real}, é possível prever trajetórias em tempo real utilizando conjuntos de neurônios corticais. Esse comando insere o nome do autor diretamente no texto, seguido da referência entre parênteses.
+
+\end{itemize}
+
+A gestão das referências no \LaTeX~é feita por meio de um arquivo \texttt{.bib}, onde são armazenadas todas as entradas bibliográficas. Cada entrada é identificada por uma chave única, que é utilizada nos comandos de citação. Por exemplo, a referência \cite{knuth} é um livro clássico sobre o sistema \TeX, enquanto \cite{rakov2003lightning} aborda os efeitos físicos dos raios.
+
+Além disso, é possível citar trabalhos de diferentes tipos, como artigos, teses, manuais e documentos online. Por exemplo, \citeonline{Almeida2018} discute métodos de estimativa de capacidade de carga em solos não saturados, enquanto \citeonline{elat2015densidade} apresenta dados sobre a densidade de descargas atmosféricas. Para citações de documentos normativos, pode-se utilizar \cite{NBR10520:2002}, que define as normas para citações em documentos.
+
+
+\subsection{Exemplos de Citações}
+
+A citação de referências no \LaTeX~é feita por meio do comando \verb|\cite{autor2023}|, que insere a referência entre parênteses no texto. Por exemplo, o livro de \cite{rakov2003lightning} é uma referência clássica sobre descargas atmosféricas. Para citar autores diretamente no texto, utiliza-se o comando "\verb|\citeonline{autor2024}|", como em \citeonline{elat2015densidade}, que apresenta dados sobre a densidade de descargas atmosféricas.
+
+\subsection{Citações Múltiplas}
+
+É possível citar múltiplas referências que concordam entre si utilizando o comando "\cite{}"com várias chaves separadas por vírgulas. Por exemplo, \cite{Almeida2018,Gondim2017} discutem métodos de estimativa de capacidade de carga e seleção de materiais, respectivamente.
+
+\subsection{Citações Literais ou Diretas}
+
+Citações literais ou diretas com mais de três linhas devem ser destacadas com recuo de $4~cm$ da margem esquerda, utilizando fonte de tamanho 10 e espaçamento simples. Um exemplo é a citação de \citeonline{feitosa2016}:
+
+\begin{citacao}
+    A cultura é o processo através do qual o homem cria o algo onde antes imperava o nada. Esse algo é toda complexidade de criações simbólicas, de sentidos e significados que damos às coisas e ao mundo. Um ""algo"" que não se sustenta se não se entender os processos culturais como mecanismos de mediação entre nós e os fenômenos. Assim, mais do que apenas um elemento da comunicação, a mediação é, por excelência, cultural. As diversas modalidades de mediação são apenas sotaques diferenciados dessa mediação cultural. Assim é a mediação informacional.
+\end{citacao}
+
+A mesma citação pode ser reproduzida com a referência ao final:
+
+\begin{citacao}
+    A cultura é o processo através do qual o homem cria o algo onde antes imperava o nada. Esse algo é toda complexidade de criações simbólicas, de sentidos e significados que damos às coisas e ao mundo. Um “algo” que não se sustenta se não se entender os processos culturais como mecanismos de mediação entre nós e os fenômenos. Assim, mais do que apenas um elemento da comunicação, a mediação é, por excelência, cultural. As diversas modalidades de mediação são apenas sotaques diferenciados dessa mediação cultural. Assim é a mediação informacional. \cite{feitosa2016}.
+\end{citacao}
