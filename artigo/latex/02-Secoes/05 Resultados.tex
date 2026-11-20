@@ -14,6 +14,29 @@ A série temporal reuniu 215.251 registros. Os maiores totais anuais ocorreram e
 
 Entre março e junho, concentraram-se 141.020 registros (65,5\% do total). Maio acumulou 44.018 registros, com média anual de 4.401,8. Em todos os anos, os maiores totais mensais ocorreram entre abril e junho; o pico da série foi registrado em maio de 2022 (10.601). Essa concentração caracteriza sazonalidade descritiva, sem estabelecer associação causal com o clima.
 
+
+A Figura \ref{fig:sazonalidade_mensal} apresenta a
+distribuição mensal dos registros ao longo da série,
+evidenciando a concentração sazonal e as diferenças
+de intensidade entre os anos analisados.
+
+\begin{figure}[!htbp]
+    \centering
+    \captionsetup{width=16cm}
+    \Caption{\label{fig:sazonalidade_mensal}
+    Distribuição mensal dos registros classificados
+    como dengue no Ceará, 2016--2025}
+    \IFCEfig{}{
+        \includegraphics[width=0.9\textwidth,keepaspectratio]{Figuras/mapa_calor_2016_2025.png}
+    }{
+        \Fonte{Elaborado pelo autor a partir de
+        dados do Ministério da Saúde.}
+    }
+\end{figure}
+
+\FloatBarrier
+
+
 \section{Distribuição municipal por números absolutos}
 \label{sec:resultados_municipais}
 
@@ -24,7 +47,7 @@ A base municipal reuniu 215.243 registros válidos nos 184 municípios. Fortalez
     \captionsetup{width=16cm}
     \Caption{\label{fig:top10_municipios} Dez municípios com maiores totais acumulados de registros classificados de dengue no Ceará, 2016--2025}
     \IFCEfig{}{
-        \includegraphics[width=\textwidth]{Figuras/top10_municipios_2016_2025.png}
+        \includegraphics[width=0.7\textwidth]{Figuras/top10_municipios_2016_2025.png}
     }{
         \Fonte{Elaborado pelo autor a partir de dados do Ministério da Saúde.}
     }
@@ -78,7 +101,7 @@ Conforme a Figura \ref{fig:brejo_ceara}, Brejo Santo superou a taxa estadual em 
     \captionsetup{width=12cm}
     \Caption{\label{fig:brejo_ceara} Evolução das taxas de registros classificados de dengue em Brejo Santo e no Ceará, 2016--2025}
     \IFCEfig{}{
-        \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{Figuras/comparativo_brejo_ceara_2016_2025.png}
+        \includegraphics[width=0.8\textwidth,height=\textheight,keepaspectratio]{Figuras/comparativo_brejo_ceara_2016_2025.png}
     }{
         \Fonte{Elaborado pelo autor a partir de dados do Ministério da Saúde e do IBGE.}
     }
@@ -114,7 +137,7 @@ As classes dos mapas são descritivas e constantes durante a série, permitindo 
     \captionsetup{width=16cm}
     \Caption{\label{fig:mapas_historicos} Distribuição municipal das taxas de registros classificados de dengue no Ceará, 2016--2025}
     \IFCEfig{}{
-        \includegraphics[width=\textwidth]{Figuras/mapas_historicos_dengue_2016_2025.png}
+        \includegraphics[width=0.7\textwidth]{Figuras/mapas_historicos_dengue_2016_2025.png}
     }{
         \Fonte{Elaborado pelo autor a partir de dados do Ministério da Saúde e do IBGE.}
     }
@@ -124,4 +147,6 @@ As classes dos mapas são descritivas e constantes durante a série, permitindo 
 \section{Limitações na interpretação dos resultados}
 \label{sec:limitacoes_resultados}
 
-A interpretação depende da qualidade das classificações, de possíveis duplicidades e das fontes populacionais. A exclusão dos 62 registros com intervalo superior a 365 dias pode afetar as agregações; a referência populacional de 2023 baseia-se no Censo de 2022 e a completude de 2025 não foi confirmada. A malha municipal de 2024 foi aplicada aos dez anos. Assim, contagens e taxas não equivalem necessariamente a casos únicos ou à incidência oficial, e os padrões observados não demonstram causalidade nem dependência espacial significativa.
+A interpretação dos resultados exige cautela diante de possíveis inconsistências e duplicidades nos registros, diferenças entre fontes populacionais e completude não confirmada dos dados de 2025. As taxas calculadas não equivalem necessariamente à incidência oficial, e os padrões observados não demonstram causalidade.
+
+Os indicadores, gráficos e mapas produzidos poderão ser disponibilizados aos gestores de vigilância epidemiológica para apoiar o monitoramento temporal, a identificação de municípios que demandem atenção e o planejamento de ações. Seu uso deverá ser complementado por avaliações epidemiológicas atualizadas.

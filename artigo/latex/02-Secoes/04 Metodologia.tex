@@ -16,6 +16,56 @@ Os denominadores populacionais foram obtidos do IBGE, com estimativas municipais
 
 O processamento foi realizado em Python, utilizando pandas para filtragem e agregação, Matplotlib e Seaborn para visualizações e GeoPandas para mapas. Os arquivos maiores foram lidos em blocos de até 100.000 linhas, mantendo-se os dados originais separados dos resultados processados.
 
+O fluxo de processamento da pesquisa, desde a obtenção das bases públicas até a elaboração dos indicadores e das representações gráficas, está sintetizado na Figura \ref.
+
+
+\begin{figure}[!htbp]
+    \centering
+    \Caption{Fluxograma das etapas metodológicas da pesquisa}
+    \label{fig:fluxograma_metodologia}
+
+    \begingroup
+    \setlength{\fboxsep}{2pt}
+    \footnotesize
+
+    \makebox[\linewidth][c]{%
+        \fbox{\parbox[c][1.8cm][c]{0.16\linewidth}{
+            \centering
+            \textbf{Obtenção}\\
+            Ministério da Saúde e IBGE
+        }}
+        $\rightarrow$
+        \fbox{\parbox[c][1.8cm][c]{0.16\linewidth}{
+            \centering
+            \textbf{Filtragem}\\
+            Ceará, classificação e datas
+        }}
+        $\rightarrow$
+        \fbox{\parbox[c][1.8cm][c]{0.16\linewidth}{
+            \centering
+            \textbf{Integração}\\
+            Municípios e populações
+        }}
+        $\rightarrow$
+        \fbox{\parbox[c][1.8cm][c]{0.16\linewidth}{
+            \centering
+            \textbf{Análise}\\
+            Séries, taxas e sazonalidade
+        }}
+        $\rightarrow$
+        \fbox{\parbox[c][1.8cm][c]{0.16\linewidth}{
+            \centering
+            \textbf{Resultados}\\
+            Gráficos, mapas e tabelas
+        }}
+    }
+
+    \endgroup
+
+\end{figure}
+
+\FloatBarrier
+
 \section{Seleção e validação dos registros}
 \label{sec:selecao_registros}
 
