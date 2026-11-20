@@ -1,0 +1,107 @@
+\providecommand{\abntreprintinfo}[1]{%
+ \citeonline{#1}}
+\setlength{\labelsep}{0pt}\begin{thebibliography}{}
+\providecommand{\abntrefinfo}[3]{}
+\providecommand{\abntbstabout}[1]{}
+\abntbstabout{v-1.9.7 }
+
+\bibitem[Araújo \textit{et al.} 2008]{Araujo2008}
+\abntrefinfo{Araújo \textit{et al.}}{ARAúJO \textit{et al.}}{2008}
+{ARAúJO, J. R.~d.; FERREIRA, E. F.~e.; ABREU, M. H. N. G.~d. Revisão
+  sistemática sobre estudos de espacialização da dengue no brasil.
+\textbf{Revista Brasileira de Epidemiologia}, v.~11, n.~4, p. 696--708, 2008.}
+
+\bibitem[{Brasil. Ministério da Saúde} 2024]{Brasil2024Dengue}
+\abntrefinfo{{Brasil. Ministério da Saúde}}{{Brasil. Ministério da
+  Saúde}}{2024a}
+{{Brasil. Ministério da Saúde}. \textbf{Dengue: diagnóstico e manejo
+  clínico: adulto e criança}.
+6. ed. Brasília, DF, 2024. Dispon{\'\i}vel em:
+  \url{https://bvsms.saude.gov.br/bvs/publicacoes/dengue\_diagnostico\_manejo\_clinico\_6ed.pdf}.
+  Acesso em: 12 nov. 2026.}
+
+\bibitem[{Brasil. Ministério da Saúde} 2024]{BrasilGuiaVigilancia}
+\abntrefinfo{{Brasil. Ministério da Saúde}}{{Brasil. Ministério da
+  Saúde}}{2024b}
+{{Brasil. Ministério da Saúde}. \textbf{Guia de vigilância em saúde: volume
+  2}.
+6. ed. Brasília, DF, 2024. Dispon{\'\i}vel em:
+  \url{https://www.gov.br/saude/pt-br/centrais-de-conteudo/publicacoes/svsa/vigilancia/guia-de-vigilancia-em-saude-volume-2-6a-edicao/view}.
+  Acesso em: 12 nov. 2026.}
+
+\bibitem[{Brasil. Ministério da Saúde} 2025]{BrasilDadosDengue}
+\abntrefinfo{{Brasil. Ministério da Saúde}}{{Brasil. Ministério da
+  Saúde}}{2025}
+{{Brasil. Ministério da Saúde}. \textbf{Portal de Dados Abertos: arboviroses
+  -- dengue}. Brasília, DF: [s.n.], 2025.
+Dispon{\'\i}vel em:
+  \url{https://dadosabertos.saude.gov.br/dataset/arboviroses-dengue}. Acesso
+  em: 12 nov. 2026.}
+
+\bibitem[Costa e Araújo 2021]{CostaAraujo2021}
+\abntrefinfo{Costa e Araújo}{COSTA; ARAúJO}{2021}
+{COSTA, M. S.~d.; ARAúJO, R. A. F.~d. Variabilidade climática: A
+  precipitação como parâmetro de estudo para os casos de dengue no litoral,
+  sertão, serra e sul cearense entre 2007 e 2019.
+\textbf{Revista Brasileira de Meteorologia}, v.~36, n. 3, suplemento, 2021.
+Dispon{\'\i}vel em: \url{https://doi.org/10.1590/0102-77863630032}. Acesso em:
+  12 nov. 2026.}
+
+\bibitem[Hunter 2007]{Hunter2007}
+\abntrefinfo{Hunter}{HUNTER}{2007}
+{HUNTER, J.~D. Matplotlib: a 2d graphics environment.
+\textbf{Computing in Science \& Engineering}, v.~9, n.~3, p. 90--95, 2007.}
+
+\bibitem[{Instituto Brasileiro de Geografia e Estatística}
+  2026]{IBGE2022Censo}
+\abntrefinfo{{Instituto Brasileiro de Geografia e Estatística}}{{Instituto
+  Brasileiro de Geografia e Estatística}}{2026}
+{{Instituto Brasileiro de Geografia e Estatística}. \textbf{Censo Demográfico
+  2022: tabela 4714 -- população residente, área territorial e densidade
+  demográfica}. Rio de Janeiro: [s.n.], 2026.
+Dispon{\'\i}vel em: \url{https://sidra.ibge.gov.br/tabela/4714}. Acesso em: 12
+  nov. 2026.}
+
+\bibitem[Jordahl \textit{et al.} 2020]{Jordahl2020}
+\abntrefinfo{Jordahl \textit{et al.}}{JORDAHL \textit{et al.}}{2020}
+{JORDAHL, K. \textit{et al.} \textbf{geopandas/geopandas: v0.8.1}. [S.l.]:
+  Zenodo, 2020.}
+
+\bibitem[Magalhães e Zanella 2013]{MagalhaesZanella2013}
+\abntrefinfo{Magalhães e Zanella}{MAGALHãES; ZANELLA}{2013}
+{MAGALHãES, G.~B.; ZANELLA, M.~E. Comportamento espacial da dengue e sua
+  relação com o clima na região metropolitana de fortaleza.
+\textbf{Revista Brasileira de Climatologia}, v.~12, n.~1, 2013.}
+
+\bibitem[McKinney 2010]{McKinney2010}
+\abntrefinfo{McKinney}{MCKINNEY}{2010}
+{MCKINNEY, W. Data structures for statistical computing in python. In:
+  \textbf{Proceedings of the 9th Python in Science Conference}. [S.l.: s.n.],
+  2010.}
+
+\bibitem[{Organização Mundial da Saúde} 2025]{OMS2025}
+\abntrefinfo{{Organização Mundial da Saúde}}{{Organização Mundial da
+  Saúde}}{2025}
+{{Organização Mundial da Saúde}. \textbf{Dengue}. Genebra: [s.n.], 2025.
+Dispon{\'\i}vel em:
+  \url{https://www.who.int/news-room/fact-sheets/detail/dengue-and-severe-dengue}.
+  Acesso em: 12 nov. 2026.}
+
+\bibitem[Silva \textit{et al.} 2020]{Silva2020}
+\abntrefinfo{Silva \textit{et al.}}{SILVA \textit{et al.}}{2020}
+{SILVA, E. T. C.~d.; OLINDA, R.~A.; PACHá, A.~S.; COSTA, A.~O.; BRITO, A.~L.;
+  PEDRAZA, D.~F. Análise espacial da distribuição dos casos de dengue e sua
+  relação com fatores socioambientais no estado da paraíba, brasil,
+  2007--2016.
+\textbf{Saúde em Debate}, v.~44, n.~125, p. 465--477, 2020.}
+
+\bibitem[Soares \textit{et al.} 2021]{SoaresAraujoAlmeida2021}
+\abntrefinfo{Soares \textit{et al.}}{SOARES \textit{et al.}}{2021}
+{SOARES, P.~V.; ARAúJO, R. A. F.~d.; ALMEIDA, M.~E. A influência das
+  variáveis meteorológicas na ocorrência de casos de dengue em fortaleza,
+  ceará.
+\textbf{Revista Brasileira de Meteorologia}, v.~36, n.~4, 2021.
+Dispon{\'\i}vel em: \url{https://doi.org/10.1590/0102-7786360044}. Acesso em:
+  12 nov. 2026.}
+
+\end{thebibliography}

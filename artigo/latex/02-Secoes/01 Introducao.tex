@@ -1,66 +1,16 @@
+
 \begingroup
 \let\clearpage\relax
 \chapter{INTRODUÇÃO}\label{sec:introducao}
 \endgroup
 
-Este \textit{template} foi desenvolvido para auxiliar autores na utilização do \LaTeX~na plataforma \textit{Overleaf}. O \LaTeX, criado na década de 80 por Leslie Lamport, é amplamente reconhecido por sua excelência na produção de textos matemáticos e científicos, garantindo alta qualidade tipográfica \cite{goossens1994latex}. 
 
-A plataforma \textit{Overleaf} (anteriormente conhecida como \textit{ShareLaTeX}) permite o acesso e edição de documentos \LaTeX~diretamente pelo navegador, sem a necessidade de instalação de softwares ou pacotes adicionais. Todos os \textit{packages} necessários para a formatação deste modelo estão disponíveis online, facilitando o processo de escrita e formatação.
+A dengue constitui um importante problema de saúde pública no Brasil, caracterizado por oscilações temporais e diferenças na distribuição territorial dos registros \cite{OMS2025,Brasil2024Dengue}.
 
-Este modelo também oferece orientações gerais para a elaboração de trabalhos acadêmicos, seguindo as normas do Instituto Federal de Educação, Ciência e Tecnologia do Ceará. No entanto, cabe ao autor adaptar o conteúdo conforme as especificidades de sua pesquisa.
+A análise dessas bases exige cuidados relacionados à qualidade dos registros, às datas utilizadas e aos critérios de classificação. Assim, os quantitativos analisados não devem ser interpretados automaticamente como número de indivíduos acometidos ou como indicadores oficiais de incidência. Além disso, a comparação entre municípios requer considerar suas diferenças populacionais, justificando o uso de taxas por 100 mil habitantes.
 
-A introdução tem como objetivo apresentar de forma clara e concisa o tema investigado, contextualizando-o dentro de uma área do conhecimento. Além disso, deve incluir:
+Este trabalho tem como objetivo analisar a evolução temporal e a distribuição espacial dos registros classificados como dengue no Ceará entre 2016 e 2025, utilizando técnicas computacionais de preparação, validação e visualização de dados públicos. Especificamente, são examinadas séries anuais e mensais baseadas na data de início dos sintomas, padrões de sazonalidade, totais e taxas populacionais dos 184 municípios cearenses, a recorrência de taxas municipais superiores à estadual e a distribuição espacial das taxas ao longo do período.
 
-\begin{itemize}
-    \item A justificativa para a escolha do tema;
-    \item Os objetivos do trabalho;
-    \item O objeto de pesquisa;
-    \item Uma breve descrição da estrutura do documento.
-\end{itemize}
+A pesquisa é quantitativa, observacional, retrospectiva e descritiva, utilizando registros do Ministério da Saúde e dados populacionais do Instituto Brasileiro de Geografia e Estatística (IBGE). O processamento foi realizado por meio de scripts em Python, envolvendo filtragem, integração, agregação e representação gráfica e cartográfica dos dados.
 
-É importante ressaltar que a introdução não deve ser dividida em seções, mas sim servir como uma visão geral do trabalho, explicando sua organização e os principais pontos abordados ao longo do texto.
-
-\section{Regras de Escrita}
-\label{sec:regras_escrita}
-
-Para garantir a clareza e a consistência do texto, devem ser seguidas as seguintes regras de escrita:
-
-\begin{itemize}
-    \item \textbf{Números menores que 10}: Escrevem-se por extenso, como "um", "dois", "três", "quatro", "cinco", "seis", "sete", "oito", "nove" e "dez". Por exemplo: "Foram realizadas três entrevistas".
-    
-    \item \textbf{Datas}: Quando escritas por extenso, números menores que 10 não devem levar um “zero à esquerda”. Por exemplo: “Brasília, 9 de março”.
-    
-    \item \textbf{Números mistos}: Quando houver números inferiores e superiores a dez na mesma frase, todos os números deverão ser escritos com algarismos. Por exemplo: "Foram coletados 5 dados no primeiro dia e 15 no segundo".
-    
-    \item \textbf{Números de 11 a 999}: Devem ser escritos em algarismos. Por exemplo: "Foram analisados 250 casos".
-    
-    \item \textbf{Números a partir de mil}: Use algarismo + palavra para números redondos ou aproximados. Por exemplo: "3 mil", "4,3 mil", "18,7 mil", "3 milhões", "1,3 bilhão".
-    
-    \item \textbf{Palavras estrangeiras}: Devem estar em itálico. Por exemplo: "O software \textit{Python} foi utilizado para análise de dados".
-    
-    \item \textbf{Citação de linguagens, bibliotecas e ferramentas}: Nomes de linguagens de programação, bibliotecas, ferramentas e outras tecnologias devem ser escritos corretamente, respeitando a grafia oficial e diferenciando maiúsculas e minúsculas. Por exemplo: "A linguagem \textit{Python} \cite{Python3} e a biblioteca \texttt{NumPy} \cite{harris2020array} foram utilizadas para análise de dados".
-    
-    \item \textbf{Padrão de escrita}: Sempre seguir um padrão consistente ao longo do texto, evitando variações desnecessárias.
-    
-    \item \textbf{Unidades de medida}: Devem ser escritas com seus símbolos padronizados, sem ponto final. Exemplo: "kg", "m", "s", "°C".
-    
-    \item \textbf{Gráficos e tabelas}: Devem ser numerados e acompanhados de legendas explicativas. Devem ser referenciados no texto antes de sua exibição. Exemplo: "Conforme mostrado na Figura 1...".
-    
-    \item \textbf{Uso de conectores}: Para garantir a coerência, utilize conectores apropriados:
-    \begin{itemize}
-        \item \textbf{Adição}: além disso, também, além do mais.
-        \item \textbf{Causa e efeito}: portanto, assim, consequentemente, devido a.
-        \item \textbf{Contraste}: contudo, entretanto, porém, por outro lado.
-        \item \textbf{Exemplificação}: por exemplo, como ilustração, especificamente.
-    \end{itemize}
-
-     \item \textbf{Evitar redundâncias}: Frases devem ser objetivas e diretas. Exemplo: "Os resultados obtidos demonstram" é preferível a "Os resultados que foram obtidos demonstram".
-    
-    \item \textbf{Uso de números decimais}: Em português, utilize vírgula para separar decimais. Exemplo: "3,14". Para artigos em inglês, utilize ponto decimal ("3.14").
-    
-    \item \textbf{Uso de "o mesmo"}: O uso da expressão "o mesmo" como substituto pronominal é incorreto na norma culta do português brasileiro. Prefira repetir o termo ou reformular a frase para garantir clareza e formalidade.
-
-    \item \textbf{Evitar prolixidade}: O texto deve ser conciso e direto, evitando repetições desnecessárias e construções excessivamente longas. Prefira frases curtas e objetivas.
-    
-\end{itemize}
-
+A contribuição do estudo consiste na caracterização exploratória dos padrões temporais e espaciais da dengue no Ceará e na documentação de um fluxo computacional reproduzível. As análises não buscam estabelecer relações causais entre os padrões identificados e fatores ambientais, sociais ou epidemiológicos.

@@ -1,71 +1,49 @@
 
 \begingroup
 \let\clearpage\relax
-\chapter{METODOLOGIA}\label{sec:metodologia}
+\chapter{METODOLOGIA}
+\label{sec:metodologia}
 \endgroup
 
+A pesquisa é quantitativa, observacional, retrospectiva e descritiva, baseada em dados secundários públicos. Foram analisados registros classificados como dengue no Ceará entre 2016 e 2025, por meio de procedimentos computacionais de seleção, validação, agregação e visualização, sem investigação de relações causais.
 
-A metodologia descreve os procedimentos e técnicas utilizados para conduzir a pesquisa. Esta seção deve apresentar, de forma clara e detalhada, os métodos adotados, os instrumentos de coleta de dados, a população ou amostra estudada, e as técnicas de análise. A escolha da metodologia deve ser justificada, demonstrando sua adequação aos objetivos da pesquisa.
+\section{Fontes de dados e processamento}
+\label{sec:fontes_dados}
 
-\section{Tipo de Pesquisa}
-\label{sec:tipo_pesquisa}
+Foram utilizados os arquivos \texttt{DENGBR16.csv} a \texttt{DENGBR25.csv}, disponibilizados pelo Ministério da Saúde \cite{BrasilDadosDengue}. A filtragem pela variável \texttt{SG\_UF}, com código 23, identificou inicialmente 416.095 registros associados ao Ceará. O ano do arquivo não foi adotado como referência temporal; para isso, utilizou-se a data de início dos sintomas.
 
-Este trabalho adota uma abordagem [descreva o tipo de pesquisa, por exemplo: quantitativa, qualitativa ou mista]. A pesquisa [quantitativa/qualitativa/mista] foi escolhida porque [justifique brevemente a escolha]. Para \citeonline{lamport1986latex}, esse tipo de abordagem é adequado para [explique por que é adequado].
+Os denominadores populacionais foram obtidos do IBGE, com estimativas municipais de 2016 a 2021 e de 2024 a 2025, dados do Censo de 2022 e uma referência para 2023 baseada no mesmo censo \cite{IBGE2022Censo}. Assim, o denominador de 2023 não constitui estimativa independente daquele ano.
 
-\section{Procedimentos Metodológicos}
-\label{sec:procedimentos}
+O processamento foi realizado em Python, utilizando pandas para filtragem e agregação, Matplotlib e Seaborn para visualizações e GeoPandas para mapas. Os arquivos maiores foram lidos em blocos de até 100.000 linhas, mantendo-se os dados originais separados dos resultados processados.
 
-Os procedimentos metodológicos foram divididos em etapas principais, conforme descrito a seguir:
+\section{Seleção e validação dos registros}
+\label{sec:selecao_registros}
 
-\begin{itemize}
-    \item \textbf{Definição do problema} [Descreva como o problema de pesquisa foi definido].
-    \item \textbf{Revisão da literatura} [Explique como foi realizada a revisão bibliográfica].
-    \item \textbf{Coleta de dados} [Descreva os métodos e instrumentos utilizados para coletar dados].
-    \item \textbf{Análise dos dados} [Explique as técnicas de análise utilizadas].
-\end{itemize}
+Foram selecionados os códigos 10 (dengue), 11 (dengue com sinais de alarme) e 12 (dengue grave) da variável \texttt{CLASSI\_FIN}, totalizando 215.748 registros. A delimitação pela variável \texttt{DT\_SIN\_PRI}, referente ao início dos sintomas entre 2016 e 2025, reduziu esse total para 215.313. A variável \texttt{DT\_NOTIFIC} foi utilizada para calcular o intervalo entre sintomas e notificação.
 
-\section{População e Amostra}
-\label{sec:populacao_amostra}
+Dos registros delimitados temporalmente, 62 apresentaram intervalo superior a 365 dias e foram excluídos das agregações, embora preservados na base de trabalho. Esse limite constitui critério operacional de qualidade, sem comprovar erro individual. A série temporal final reuniu 215.251 registros. Não houve exclusão automática por suspeita de duplicidade, pois não foi possível confirmar episódios ou pessoas repetidos.
 
-A população deste estudo consiste em [descreva a população estudada]. A amostra foi selecionada por meio de [descreva o método de amostragem, por exemplo: amostragem aleatória simples, estratificada, etc.], totalizando [número de participantes ou unidades de análise]. A escolha desse método de amostragem justifica-se por [explique a justificativa].
+\section{Séries temporais e integração municipal}
+\label{sec:series_temporais}
 
-\section{Instrumentos de Coleta de Dados}
-\label{sec:instrumentos}
+Os 215.251 registros foram agrupados por ano e mês de início dos sintomas, produzindo 120 observações mensais. A análise considerou totais anuais, distribuição mensal e sazonalidade ao longo dos dez anos.
 
-Para a coleta de dados, foram utilizados os seguintes instrumentos:
+Os municípios de residência foram identificados por \texttt{ID\_MN\_RESI} e confrontados com os códigos dos 184 municípios cearenses. Seis registros não possuíam código municipal e dois apresentavam códigos de outros estados; esses oito registros permaneceram na série temporal estadual, mas foram excluídos das agregações municipais. A base municipal resultou em 215.243 registros.
 
-\begin{itemize}
-    \item \textbf{Instrumento 1} [Descreva o instrumento e sua aplicação].
-    \item \textbf{Instrumento 2} [Descreva o instrumento e sua aplicação].
-    \item \textbf{Instrumento 3} [Descreva o instrumento e sua aplicação].
-\end{itemize}
+A integração entre registros e populações compreendeu 1.840 combinações município-ano. Os códigos municipais de seis dígitos da base epidemiológica foram compatibilizados com os de sete dígitos do IBGE, sem populações ausentes nas combinações utilizadas.
 
-Cada instrumento foi escolhido com base em [justifique a escolha dos instrumentos]. Para garantir a validade e confiabilidade dos dados, [descreva as medidas adotadas, como pré-testes ou validação por especialistas].
+\section{Taxas, comparações e mapas municipais}
+\label{sec:calculo_taxas}
 
-\section{Técnicas de Análise de Dados}
-\label{sec:analise_dados}
+As taxas de registros por 100 mil habitantes foram calculadas para cada município e ano conforme a Equação \ref{eq:taxa_registros}. A taxa estadual anual foi obtida dividindo-se a soma dos registros municipais válidos pela população total correspondente, sem utilizar a média simples das taxas municipais. Esses indicadores não equivalem necessariamente à incidência oficial da dengue.
 
-Os dados coletados foram analisados por meio das seguintes técnicas:
+Foram comparados os totais municipais acumulados de 2016 a 2025 e as taxas municipais e estaduais anuais. A recorrência foi definida como o número de anos em que a taxa municipal superou a estadual; os 15 municípios com maior recorrência foram representados em mapa de calor. Também foi examinada a evolução das taxas de Brejo Santo em comparação com as do Ceará ao longo de toda a série.
 
-\begin{itemize}
-    \item \textbf{Técnica 1}Utilizou-se o software [nome do software], que permite [explique brevemente as funcionalidades do software].
-    \item \textbf{Técnica 2} Adotou-se [descreva a técnica e sua aplicação].
-\end{itemize}
+A distribuição espacial foi representada com a malha dos 184 municípios do IBGE de 2024, em SIRGAS 2000 (EPSG:4674), mantida nos mapas dos dez anos. As taxas foram classificadas em seis faixas: ausência de registros; superior a zero até 100; superior a 100 até 300; superior a 300 até 700; superior a 700 até 1.500; e superior a 1.500 registros por 100 mil habitantes. As faixas são descritivas, não correspondendo a limites oficiais de risco.
 
-\section{Limitações da Pesquisa}
+\section{Limitações e aspectos éticos}
 \label{sec:limitacoes}
 
-Este estudo apresenta algumas limitações, tais como:
+A interpretação está sujeita a inconsistências de preenchimento, possíveis duplicidades, ao critério de exclusão dos 62 registros e às diferenças entre fontes populacionais. A completude dos dados de 2025 não foi confirmada. O uso da malha municipal de 2024 em toda a série também exige cautela. Não foram realizados testes de autocorrelação espacial ou análises causais.
 
-\begin{itemize}
-    \item \textbf{Limitação 1} [Explique como isso pode afetar os resultados].
-    \item \textbf{Limitação 2} [Explique como isso pode afetar os resultados].
-    \item \textbf{Limitação 3} [Explique como isso pode afetar os resultados].
-\end{itemize}
-
-Apesar dessas limitações, acredita-se que os resultados obtidos são válidos e relevantes para [contexto da pesquisa].
-
-\section{Considerações Éticas}
-\label{sec:etica}
-
-Este estudo foi conduzido em conformidade com as diretrizes éticas para pesquisas envolvendo [descreva o tipo de participação, por exemplo: seres humanos, animais, etc.]. O projeto foi aprovado pelo Comitê de Ética em Pesquisa da [instituição], sob o número de protocolo [número do protocolo]. Todos os participantes assinaram um Termo de Consentimento Livre e Esclarecido (TCLE), garantindo o sigilo e a confidencialidade das informações coletadas.
+Foram utilizados exclusivamente dados secundários públicos, apresentados de forma agregada, sem recrutamento de participantes ou tentativa de identificação individual. A necessidade de apreciação ética deve ser confirmada conforme as normas aplicáveis e as orientações institucionais.
